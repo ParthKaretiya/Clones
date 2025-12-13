@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercedes-Benz Service & Maintenance</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #ffffff;
+        color: #ffffff;
+        overflow-x: hidden;
+    }
+
+    /* Header (Smaller Version) */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 45px; /* reduced height */
+        background: linear-gradient(to right, #000, #111);
+        border-bottom: 1px solid #333;
+    }
+
+    header .nav-left a, 
+    header .nav-right a {
+        color: #ffffff;
+        margin: 0 8px; /* reduced spacing */
+        text-decoration: none;
+        font-size: 13px; /* slightly smaller text */
+        transition: 0.3s;
+    }
+
+    header a:hover {
+        color: #c0c0c0;
+        text-shadow: 0 0 8px #aaa;
+    }
+
+    header img {
+        width: 115px; /* smaller logo */
+        filter: brightness(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+        background: url('') center/cover no-repeat;
+        height: 430px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 650px;
+        color: hsl(0, 100%, 98%);
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+        margin-bottom: 15px;
+        color: #f5f5f5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .hero-content p {
+        color: #bdbdbd;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .hero-content button {
+        background: linear-gradient(90deg, #c0c0c0, #999);
+        color: #000;
+        border: none;
+        padding: 12px 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .hero-content button:hover {
+        background: #fff;
+        box-shadow: 0 0 15px #999;
+    }
+
+    /* Section Style */
+    .section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 80px 10%;
+        border-bottom: 1px solid #222;
+        background: #000;
+    }
+
+    .section img {
+        width: 47%;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(255,255,255,0.05);
+        transition: 0.4s;
+    }
+
+    .section img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 25px rgba(255,255,255,0.15);
+    }
+
+    .section-text {
+        width: 47%;
+    }
+
+    .section-text h2 {
+        font-size: 28px;
+        margin-bottom: 18px;
+        color: #c0c0c0;
+    }
+
+    .section-text p {
+        color: #a8a8a8;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        margin-top: 25px;
+        background: linear-gradient(90deg, #c0c0c0, #999);
+        color: #000;
+        padding: 12px 28px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+        background: #fff;
+        box-shadow: 0 0 15px #999;
+    }
+
+    /* Footer */
+    footer {
+        background: linear-gradient(to top, #000, #111);
+        padding: 70px 10%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 50px;
+        border-top: 1px solid #222;
+    }
+
+    footer h3 {
+        font-size: 18px;
+        color: #c0c0c0;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    footer a {
+        display: block;
+        color: #888;
+        text-decoration: none;
+        margin: 8px 0;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    footer a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px #aaa;
+    }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="nav-left">
+        <a href="#">Models</a>
+        <a href="#">Buy</a>
+        <a href="#">Services</a>
+        <a href="#">Brand</a>
+    </div>
+    <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg" alt="Logo">
+    <div class="nav-right">
+        <a href="#">★</a>
+        <a href="#">♡</a>
+        <a href="#">👤 Login</a>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Service and Maintenance</h1>
+        <p>Precision. Performance. Perfection — keep your Mercedes-Benz running at its best with world-class maintenance and genuine service expertise.</p>
+        <button>Book a Service</button>
+    </div>
+</section>
+
+<!-- Section 1 -->
+<section class="section">
+    <div class="section-text">
+        <h2>Genuine Mercedes-Benz Service</h2>
+        <p>Only Mercedes-Benz Service Centers provide the precision and care your car deserves. With genuine parts, certified technicians, and advanced diagnostics, every drive feels brand new.</p>
+        <a href="#" class="cta-btn">Explore More</a>
+    </div>
+    <img src="https://www.mercedes-benz.co.in/content/dam/india/passengercars/maintenance/maintenance-services.jpg/1740065269592.jpg?im=Crop,rect=(1456,0,8736,8736);Resize=(1680,1680)" alt="Service Image 1">
+</section>
+
+<!-- Section 2 -->
+<section class="section">
+    <img src="https://www.mercedes-benz.co.in/content/dam/india/passengercars/maintenance/regular-checkup-1.jpg/1740065262724.jpg?im=Crop,rect=(0,0,1680,1680);Resize=(1680,1680)" alt="Service Image 2">
+    <div class="section-text">
+        <h2>Tailored Maintenance Packages</h2>
+        <p>Choose flexible maintenance plans that suit your driving needs. Keep your Mercedes performing at its peak while enjoying complete peace of mind and transparent pricing.</p>
+        <a href="#" class="cta-btn">View Packages</a>
+    </div>
+</section>
+
+<!-- Section 3 -->
+<section class="section">
+    <div class="section-text">
+        <h2>Certified Expertise You Can Trust</h2>
+        <p>Our technicians undergo constant training and certification to maintain your Mercedes-Benz using the latest diagnostic tools and genuine components.</p>
+        <a href="#" class="cta-btn">Find a Workshop</a>
+    </div>
+    <img src="https://www.mercedes-benz.co.in/content/dam/india/passengercars/maintenance/service-packages-image1.jpg/1740065262547.jpg?im=Crop,rect=(0,71,764,430);Resize=(1280,720)" alt="Service Image 3">
+</section>
+
+<!-- Footer -->
+<footer>
+    <div>
+        <h3>Popular Models</h3>
+        <a href="#">Electric Cars</a>
+        <a href="#">SUV</a>
+        <a href="#">Coupé</a>
+        <a href="#">Plug-in Hybrid</a>
+    </div>
+    <div>
+        <h3>Buy a Vehicle</h3>
+        <a href="#">Find a new car</a>
+        <a href="#">Configure your car</a>
+        <a href="#">All brochures</a>
+        <a href="#">Model overview</a>
+    </div>
+    <div>
+        <h3>Shopping Guide</h3>
+        <a href="#">Book a test drive</a>
+        <a href="#">Nearest Showroom</a>
+        <a href="#">Finance</a>
+        <a href="#">Mercedes-Benz Collection</a>
+    </div>
+    <div>
+        <h3>Owners</h3>
+        <a href="#">Book a service appointment</a>
+        <a href="#">Owner's Manuals</a>
+        <a href="#">Service warranty</a>
+        <a href="#">FAQ</a>
+    </div>
+    <div>
+        <h3>Technology</h3>
+        <a href="#">Electric mobility</a>
+        <a href="#">About Mercedes me</a>
+        <a href="#">Connect services</a>
+    </div>
+    <div>
+        <h3>Discover Mercedes</h3>
+        <a href="#">Contact</a>
+        <a href="#">Careers</a>
+        <a href="#">Privacy</a>
+        <a href="#">Press Release</a>
+    </div>
+</footer>
+
+</body>
+</html>

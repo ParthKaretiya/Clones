@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Selections - Alibaba Clone</title>
+  
+    <style>
+        /* --- GLOBAL & REUSED STYLES (From Home Page) --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f2f3f7; /* Slightly grey background for product contrast */
+            color: #111;
+        }
+
+        /* Top orange bar */
+        .top-bar {
+            background-color: #A24A00;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 40px;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo span { margin-left: 5px; }
+
+        nav { display: flex; gap: 20px; align-items: center; }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        /* Highlight the active link */
+        nav a.active {
+            color: #FF6A00;
+            font-weight: bold;
+            border-bottom: 2px solid #FF6A00;
+            padding-bottom: 4px;
+        }
+
+        .right-actions { display: flex; gap: 20px; align-items: center; }
+
+        .create-btn {
+            background-color: #FF6A00;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* --- NEW PAGE STYLES --- */
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 15px 40px;
+            font-size: 13px;
+            color: #666;
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .breadcrumbs span { margin: 0 5px; color: #999; }
+
+        /* Main Layout */
+        .main-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        /* Sidebar Filters */
+        .sidebar {
+            width: 240px;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .filter-group { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .filter-group:last-child { border-bottom: none; }
+        
+        .filter-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .filter-option input { margin-right: 10px; }
+
+        /* Product Grid */
+        .product-section {
+            flex: 1;
+        }
+
+        .section-header {
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: #FF6A00;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            height: 42px; /* Limit to 2 lines */
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .product-moq {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .supplier-info {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .verified-badge {
+            color: #008f1f; /* Alibaba Verified Green */
+            background: #eaffea;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-right: 5px;
+            font-size: 11px;
+        }
+
+        .contact-btn {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-top: 15px;
+            border: 1px solid #FF6A00;
+            color: #FF6A00;
+            background: #fff;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #FF6A00;
+            color: #fff;
+        }
+
+        /* --- FOOTER (Reused) --- */
+        footer {
+            margin-top: 50px;
+            background-color: #fff;
+            color: #333;
+            padding: 60px 8%;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Helper for mobile responsiveness */
+        @media(max-width:768px) {
+            .main-container { flex-direction: column; }
+            .sidebar { width: 100%; box-sizing: border-box;}
+            header, .top-bar { padding: 10px 20px; }
+            nav { display: none; } /* Hide nav on small mobile for simplicity */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div><strong>Alibaba Lens</strong> | Instantly find suppliers with image on any website by our AI search extension!</div>
+        <a href="#">Add to Chrome</a>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="https://play-lh.googleusercontent.com/eSZC2nLJakBYTgk02Sh9VBmkn8TRaiGe9ZHnzkct_hFz55ev1aY0PKafk711JtfmCMP6leqx0O-UmyU_DvRuRQ" alt="Alibaba logo" height="30"> 
+            <span>Alibaba.com</span>
+        </div>
+        <nav>
+            <a href="index.html">All categories</a>
+            <a href="#" class="active">Featured selections</a>
+            <a href="protection.html">Order protections</a>
+        </nav>
+        <div class="right-actions">
+            <span>Deliver to: IN</span>
+            <span>English-INR</span>
+            <a href="#">Sign in</a>
+            <button class="create-btn">Create account</button>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        Home <span>></span> Featured Selections <span>></span> Top Trending Products
+    </div>
+
+    <div class="main-container">
+        
+        <aside class="sidebar">
+            <div class="filter-group">
+                <div class="filter-title">Features</div>
+                <label class="filter-option"><input type="checkbox"> Ready to Ship</label>
+                <label class="filter-option"><input type="checkbox"> Paid Samples</label>
+                <label class="filter-option"><input type="checkbox" checked> Trade Assurance</label>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Supplier Types</div>
+                <label class="filter-option"><input type="radio" name="supplier"> Trade Assurance</label>
+                <label class="filter-option"><input type="radio" name="supplier" checked> Verified Supplier</label>
+                <label class="filter-option"><input type="radio" name="supplier"> < 1h Response Time</label>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Min. Order Quantity</div>
+                <label class="filter-option"><input type="checkbox"> Less than 10</label>
+                <label class="filter-option"><input type="checkbox"> Less than 100</label>
+                <label class="filter-option"><input type="checkbox"> Less than 1000</label>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-title">Price (INR)</div>
+                <div style="display:flex; gap:5px;">
+                    <input type="text" placeholder="Min" style="width:40%; padding: 4px;">
+                    -
+                    <input type="text" placeholder="Max" style="width:40%; padding: 4px;">
+                </div>
+            </div>
+        </aside>
+
+        <section class="product-section">
+            
+            <div class="section-header">
+                <h2 style="margin:0; font-size: 20px;">Featured Products for You</h2>
+                <select style="padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                    <option>Sort by: Best Match</option>
+                    <option>Sort by: Price Low to High</option>
+                    <option>Sort by: Newest</option>
+                </select>
+            </div>
+
+            <div class="grid-container">
+
+                <div class="product-card">
+                    <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600" class="product-img" alt="Product">
+                    <div class="product-title">Professional DSLR Camera 4K Video Waterproof Digital Camera</div>
+                    <div class="product-price">₹45,000 - ₹52,000</div>
+                    <div class="product-moq">Min. Order: 2 Pieces</div>
+                    <div class="supplier-info">
+                        <span class="verified-badge">✔ Verified</span>
+                        <span>Shenzhen Tech Co.</span>
+                    </div>
+                    <a href="#" class="contact-btn">Contact Supplier</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.pexels.com/photos/3945667/pexels-photo-3945667.jpeg?auto=compress&cs=tinysrgb&w=600" class="product-img" alt="Product">
+                    <div class="product-title">Smart Watch Series 8 Bluetooth Call Heart Rate Monitor</div>
+                    <div class="product-price">₹1,200 - ₹1,500</div>
+                    <div class="product-moq">Min. Order: 50 Pieces</div>
+                    <div class="supplier-info">
+                        <span class="verified-badge">✔ Verified</span>
+                        <span>Guangzhou Elec.</span>
+                    </div>
+                    <a href="#" class="contact-btn">Contact Supplier</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600" class="product-img" alt="Product">
+                    <div class="product-title">Wireless Noise Cancelling Headphones Over Ear Gaming Headset</div>
+                    <div class="product-price">₹850 - ₹1,100</div>
+                    <div class="product-moq">Min. Order: 100 Pieces</div>
+                    <div class="supplier-info">
+                        <span class="verified-badge">✔ Verified</span>
+                        <span>AudioMasters Ltd.</span>
+                    </div>
+                    <a href="#" class="contact-btn">Contact Supplier</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" class="product-img" alt="Product">
+                    <div class="product-title">Healthy Organic Pancake Mix - Gluten Free Breakfast</div>
+                    <div class="product-price">₹200 - ₹350</div>
+                    <div class="product-moq">Min. Order: 500 Boxes</div>
+                    <div class="supplier-info">
+                        <span class="verified-badge">✔ Verified</span>
+                        <span>Nature Foods Inc.</span>
+                    </div>
+                    <a href="#" class="contact-btn">Contact Supplier</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=600" class="product-img" alt="Product">
+                    <div class="product-title">Modern Office Ergonomic Chair Mesh Back Support</div>
+                    <div class="product-price">₹3,500 - ₹4,200</div>
+                    <div class="product-moq">Min. Order: 10 Pieces</div>
+                    <div class="supplier-info">
+                        <span class="verified-badge">✔ Verified</span>
+                        <span>Furniture Hub</span>
+                    </div>
+                    <a href="#" class="contact-btn">Contact Supplier</a>
+                </div>
+
+                 <div class="product-card">
+                    <img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=600" class="product-img" alt="Product">
+                    <div class="product-title">Running Shoes Breathable Mesh Sneakers for Men</div>
+                    <div class="product-price">₹650 - ₹900</div>
+                    <div class="product-moq">Min. Order: 20 Pairs</div>
+                    <div class="supplier-info">
+                        <span class="verified-badge">✔ Verified</span>
+                        <span>Sports Gear CN</span>
+                    </div>
+                    <a href="#" class="contact-btn">Contact Supplier</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer style="font-family: Arial, sans-serif; background-color: #fff; color: #333; padding: 60px 8%; border-top: 1px solid #ddd;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <p style="font-size: 15px;">
+                Trade on the go with the <strong><a href="#" style="color: #0071ce; text-decoration: none;">Alibaba.com app</a></strong>
+            </p>
+        </div>
+        <div style="text-align: center; font-size: 14px; color: #666;">
+            <p>© 1999–2025 Alibaba.com. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

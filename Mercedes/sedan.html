@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz Sedan Models</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #171717;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000000;
+      padding: 15px 60px;
+      border-bottom: 1px solid #111;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-left a, .nav-right a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-left a:hover, .nav-right a:hover {
+      color: #00aaff;
+    }
+
+    .logo img {
+      height: 38px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Sub Navigation */
+    .sub-nav {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      background: #000000;
+      padding: 15px;
+      position: sticky;
+      top: 65px;
+      z-index: 900;
+      border-bottom: 1px solid #111;
+    }
+
+    .sub-nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .sub-nav a:hover,
+    .sub-nav a.active {
+      color: #fff;
+    }
+
+    .sub-nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: #00aaff;
+    }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      padding: 150px 20px 40px;
+      background: linear-gradient(to bottom, #050505, #000);
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      color: #868585;
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Models Section */
+    .models-section {
+      padding: 60px 60px 100px;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 90px;
+    }
+
+    .model-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+     
+      text-align: center;
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .model-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .model-card h3 {
+      font-size: 1.2rem;
+      margin: 15px 0 5px;
+      color: #000000;
+    }
+
+    .model-card p {
+      font-size: 0.9rem;
+      color: #000000;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #000000;
+      border-top: 1px solid #111;
+      text-align: center;
+      padding: 25px;
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+      }
+      .sub-nav {
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 13px;
+      }
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      .models-section {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="#">Models</a>
+      <a href="#">Buy</a>
+      <a href="#">Services</a>
+      <a href="#">Brand</a>
+    </div>
+
+    <div class="logo">
+      <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg" alt="Mercedes-Benz Logo">
+    </div>
+
+    <div class="nav-right">
+      <a href="#">Provider/...</a>
+      <a href="#">★</a>
+      <a href="#">♡</a>
+      <a href="#">👤 Login</a>
+    </div>
+  </header>
+
+  <!-- Sub Navigation -->
+  <nav class="sub-nav">
+    <a href="#">All</a>
+    <a href="#">Hatchbacks</a>
+    <a href="#" class="active">Sedans</a>
+    <a href="#">SUVs</a>
+    <a href="#">Coupes</a>
+    <a href="#">EQ Models</a>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Mercedes-Benz Sedan Models</h1>
+    <p>Discover the luxury sedan lineup — blending elegance, technology, and performance.</p>
+  </section>
+
+  <!-- Models -->
+  <section class="models-section">
+    <div class="models-grid">
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/177112/805/iris.png?q=COSY-EU-100-1713d0VXqaW7qtyO67PobzIr3eWsrrCsdRRzwQZgkfZbMw3SGtGaFtsd2sDcUfp8qXGEubmJ0l3otOB2NMEbApjThI5uVcZQC31SrkzNBTwm7jA7mhKV5XN%25vq4t9yLRgLFYaxPrSrH1yJRn8wYzcoiZB7lM4FAOrTg9LQ36PDarqSeWHthtsd8BxcUfAyYXOc6VRjZrrH1gObnMrEqioTnPbEM4FzKyTg9itk6PD4%25mSeWseMtsdUvTcUfGryXGHRvW6INpqJRHuaB%25DEyJlfDADSjSiNsG8u4NLwa2ITvU%25&cp=8mhxDZy3qhkDFW2gqQWvpQ&imgt=P27&bkgnd=9&pov=BE040&uni=m&cp=8mhxDZy3qhkDFW2gqQWvpQ&width=610&crop=" alt="A-Class Limousine">
+        <h3>A-Class Limousine</h3>
+        <p>Compact luxury with intelligent performance.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/206046/804_054/iris.png?q=COSY-EU-100-1713d0VXqaSFqtyO67PobzIr3eWsrrCsdRRzwQZ6ZHZbMw3SGtGyWtsd2HdcUfp8qXGEubmJ0l3ItOB2NQnbApjtwI5uVQDQC3qvTkzNwTVm7jZ7ZhKVFKh%25vq9vlyLRDG6YaxWbSrH1KJtn8wv8noiZLqZM4FGIlTg90QO6PDBcpSeWAtutsd5cxcUfKLjXGEvTSJ0lLCxOB2Pr2bApeARI5usf2QC3UkrkzNGm6m7j0aohKVBHV%25vqA8lyLRiXJYnymdEWuOOB2znobQOxf5Ikb7oxQC3sE3kzNetDm7jCeShKVz0M%25vq7JdyLRlNpYaxH0hrH18Bln8wiA4oiZ45IM4FgKFTg735wrcldu63eZTmWk9Q6DF1s1n2nvligKfLlCVzWcY54I&cp=8mhxDZy3qhkDFW2gqQWvpQ&imgt=P27&bkgnd=9&pov=BE040&uni=m&cp=8mhxDZy3qhkDFW2gqQWvpQ&width=610&crop=" alt="C-Class Sedan">
+        <h3>C-Class Sedan</h3>
+        <p>Dynamic design meets intelligent comfort.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/297144/804/iris.png?q=COSY-EU-100-1713d0VXq0WdqtyO67PobzIr3eWsrrCsdRRzwQZgk4ZbMw3SGtlKStsd2HtcUfp8qXGEuiBJ0l3IrOB2NzObApRnCI5ux5DQC31vTkzNBTnm7jA6IhKV5Kh%25vqCBayLRzA2Yax7oxrH1KMun8wsOcoiZUboM4FGKuTg906O6PDBSqSeWA02tsd5%25QcUfCmfXGEvTVJ0lLCfOB2aycbApenpI5us5xQC3US3kzNGJum7j0hShKVBHM%25vqNuoyLRiXJYnydjHroY4Jdn8wz8yoiZC5lM4F84uTg9izO6PD4%256SeWg%25ptsdUvVcUaqKDTb32VXq0JL0lKf%25XEd9B96N683eUHpi3v1LlbMKsh&imgt=P27&bkgnd=9&pov=BE040&uni=m&cp=8mhxDZy3qhkDFW2gqQWvpQ&width=610&crop=" alt="E-Class LWB">
+        <h3>E-Class LWB</h3>
+        <p>Business-class comfort and cutting-edge luxury.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/214161/805/iris.png?q=COSY-EU-100-1713d0VXqahFqtyO67PobzIr3eWsrrCsdRRzwQZUnRZbMw3SGtlehtsd2vtcUfp8fXGEubmJ0l3ItOB2NS1bApj7pI5uVKDQC31CWkzNwP9m7jA7mhKV50L%25vqCuqyLRgc6YaxP5qrH1eMdn8wsocoiZBkIM4FAm2Tg95Yn6PDCruSeWHmjtsd8s3cUfiFNXGE49dJ0lgOhOB2PbnbApe7yI5usK2QC3vT6khQZ27m%25kL6ZhKV0KE%25vqGUDyLRKLRYaxvaErH1p96n8wi8yoiZ45pM4FgKFTg735wrcldu63eoieUl9Q6DF1s1n2nvligKfLlCVzWcY54I&imgt=P27&bkgnd=9&pov=BE040&uni=m&cp=8mhxDZy3qhkDFW2gqQWvpQ&width=610&crop=" alt="S-Class Sedan">
+        <h3>S-Class Sedan</h3>
+        <p>The ultimate expression of luxury and technology.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/223161/805_055/iris.png?q=COSY-EU-100-1713d0VXqrW7qtyO67PobzIr3eWsrrCsdRRzwQZQ9vZbMw3SGtGyjtsd2vtcUfp8cXGEubYJ0l36xOB2NS5bApj7bI5uVKDQC31MrkzNwTbm7jZ6vhKVFKE%25vq9UTyLRDGmYaxW0ErH1dItn8wvOyoiZLbgM4Fa4MTg9Hvk6PD8cqSeWiyMtsd4YtcUfC%25kXGEzbjJ0l7IJOB2KMjbApvdyI5uLfJQC3akOkzNHmdm7jgevhKVPs9%25vqAtdyLR5LDYaxCbxrH1zjRn8w7hnoiZK%251M4FvTJTg9L6k6PDaGbSeWH0Utsd8BDcUfDO6XGE5GXJ0lCrnOIJtR1q9ooiZeIQM6o2xgTSMsQO6PDLLqSeWvK3tsdPvQcUfercXGE19jJ0lB0tOB2ABnbAp5iwI5uCeZQCPFi2J%25xVZkF7oZ7vx3MkNulKlO1OsxACeqUx4Wgj%25Xi5o&cp=8mhxDZy3qhkDFW2gqQWvpQ&imgt=P27&bkgnd=9&pov=BE040&uni=m&cp=8mhxDZy3qhkDFW2gqQWvpQ&width=610&crop=" alt="Mercedes-Maybach S-Class">
+        <h3>Mercedes-Maybach S-Class</h3>
+        <p>First-class comfort and exclusive craftsmanship.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/206087/804/iris.png?q=COSY-EU-100-1713d0VXqNEFqtyO67PobzIr3eWsrrCsdRRzwQZ6ZHZbMw3SGtlajtsd2JQcUfpOyXGEuTRJ0l3OZOB2qrubApRARI5ux5IQC31CWkzNwPnm7jZcohKV5Kh%25vqCuqyLRgcDYaxPXSrH1eHDn8wsTfoiZUMEM4FGTjTg95hp6PDCroSeWznUtsd7BVcUfi%25fXGE4GjJ0lgDfOB2PSObApeIyI5usQMQC3UvrkzNGLNm7j0afhKVHSL%25vq8cXyr%25kWfDpJJ0lCrnOIJRdAbQOznRI5uefuQC3PEdkzN5lwm7jCl6hKVzTS%25vqE3JyLRaGmYaxH08rH18C1n8wioxoiZ4epM4FmIuTg735wrcldu63eZTm9P9Q6DF1s1n2nvligKfLlCVzWcY54I&cp=8mhxDZy3qhkDFW2gqQWvpQ&imgt=P27&bkgnd=9&pov=BE040&uni=m&cp=8mhxDZy3qhkDFW2gqQWvpQ&width=610&crop=" alt="AMG A 35 4MATIC Sedan">
+        <h3>AMG A 35 4MATIC Sedan</h3>
+        <p>Everyday performance with AMG precision.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/223182/805/iris.png?q=COSY-EU-100-1713d0VXqrEFqtyO67PobzIr3eWsrrCsdRRzwQZgZGZbMw3SGtlKStsd2HtcUfpOyXGEuTRJ0l36AOB2NbcbApj7bI5uVKDQC31MOkzNwTKm7jZ7fhKVFsM%25vq9JTyLRzc6Yax7X8rH1KHrn8wvzyoiZL7gM4FaKwTg90QO6PDBPlSeWAXutsd5cTcUfCX1XGEvaBJ0lL6tOB2Pr1bApeARI5usf2QC3UX3kzNGJum7j0hohKVB%25t%25vqA8TyLR5iHYaxC4qrH1qM%25n8wPbIoTnylpEjQQC3vT6khQZ27m%25kL6ZhKV00E%25vqGugyLRKG6Yax2virH18HOn8wiA4oiZ47pM4FgTwTg735wrcldu63eIue919Q6DF1s1n2nvligKfLlCVzWcY54I&cp=8mhxDZy3qhkDFW2gqQWvpQ&imgt=P27&bkgnd=9&pov=BE040&uni=m&cp=8mhxDZy3qhkDFW2gqQWvpQ&width=610&crop=" alt="AMG E 53 4MATIC+">
+        <h3>AMG E 53 4MATIC+</h3>
+        <p>Luxury meets exhilarating AMG power.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/static/v1/9785/9/6a/e6edd5b77fc25b2a65c654ac15c36ebb1adee.png" alt="AMG S 63 E PERFORMANCE">
+        <h3>AMG S 63 E PERFORMANCE</h3>
+        <p>Hybrid performance, pure dominance.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://img.autocarindia.com/mmv_images/colors/20250714020118_Mercedes_Benz_EQS_Opalith_White_Metallic_Paint[1].jpg?w=640&q=75" alt="EQS Sedan">
+        <h3>EQS Sedan</h3>
+        <p>Luxury redefined in a fully electric form.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://www.mercedes-benz.com.au/content/dam/hq/passengercars/cars/eqs/eqs-v297-pi/modeloverview/08-2022/images/mercedes-eq-eqs-v297-modeloverview-3302x1858-08-2022.png" alt="EQE Sedan">
+        <h3>EQE Sedan</h3>
+        <p>Electric innovation with signature Mercedes style.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    
+    © 2025 Mercedes-Benz India. All rights reserved.
+  </footer>
+
+</body>
+</html>

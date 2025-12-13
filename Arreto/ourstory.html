@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #ff7a00;
+      transition: 0.3s;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      cursor: pointer;
+    }
+
+    .sub-bar {
+      text-align: center;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    /* ===== DROPDOWN ===== */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown input {
+      display: none;
+    }
+
+    .dropdown label {
+      cursor: pointer;
+      color: black;
+      font-weight: 500;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: white;
+      list-style: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px 20px;
+      width: 180px;
+    }
+
+    .dropdown-content li {
+      padding: 8px 0;
+      cursor: pointer;
+    }
+
+    .dropdown-content li:hover {
+      color: #ff7a00;
+    }
+
+    .dropdown input:checked ~ .dropdown-content {
+      display: block;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      width: 100%;
+      height: 90vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      padding-left: 80px;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: absolute;
+      color: black;
+      z-index: 2;
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      background-color: #ff7a00;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero-content button:hover {
+      background-color: #e96d00;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      .navbar {
+        padding: 15px 30px;
+      }
+
+      .hero {
+        padding-left: 50px;
+        height: 75vh;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .icons {
+        margin-top: 10px;
+      }
+
+      .hero {
+        height: 70vh;
+        padding-left: 30px;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 10px 20px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero {
+        height: 60vh;
+        padding-left: px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-content p {
+        font-size: 0.95rem;
+      }
+
+      .hero-content button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+    /* ===== OUR STORY SECTION ===== */
+.story {
+  background-color: #000000;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-container {
+  max-width: 900px;
+  text-align: center;
+}
+
+.story-container h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.story-container p {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .story-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-container p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .story-container p {
+    font-size: 0.9rem;
+  }
+}
+/* General Section Styling */
+.promises {
+  background-color: #f9f9f7;
+  text-align: center;
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.promises h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+/* Promises Layout */
+.promise-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Each Promise Box */
+.promise-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 180px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.promise-box:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon Styling */
+.promise-box .icon {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+.promise-box img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Text */
+.promise-box p {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .promise-container {
+    gap: 40px;
+  }
+  .promise-box {
+    max-width: 150px;
+  }
+  .promise-box .icon {
+    width: 80px;
+    height: 80px;
+  }
+  .promise-box img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promise-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .promises h2 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+}
+.promises {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .promises h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
+    .promise-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .promise-box {
+      background: #fff;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .promise-box:hover {
+      transform: scale(1.05);
+    }
+
+    .promise-box img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .promise-text {
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: 500;
+      max-width: 120px;
+    }
+
+    @media (max-width: 768px) {
+      .promise-container {
+        gap: 30px;
+      }
+      .promise-box {
+        width: 120px;
+        height: 120px;
+      }
+      .promise-text {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .promises h2 {
+        font-size: 22px;
+      }
+      .promise-container {
+        flex-direction: column;
+        gap: 25px;
+      }
+    }
+
+    /* ---------------- What We Stand For Section ---------------- */
+    .stand-for {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .stand-for h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
+    .stand-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stand-card {
+      position: relative;
+      width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stand-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .stand-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .stand-card .text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .stand-card .text span {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 992px) {
+      .stand-card {
+        width: 280px;
+        height: auto;
+      }
+      .stand-card img {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stand-card {
+        width: 90%;
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stand-for h2 {
+        font-size: 24px;
+      }
+      .stand-card img {
+        height: 300px;
+      }
+    }
+    
+    /* Founder Section */
+    .founder-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 10%;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .founder-img {
+      flex: 1 1 400px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .founder-img img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .founder-content {
+      flex: 1 1 400px;
+    }
+
+    .founder-content h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .founder-content p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    @media (max-width: 992px) {
+      .founder-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .founder-content h2 {
+        font-size: 24px;
+      }
+      .founder-content p {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .founder-section {
+        padding: 50px 5%;
+      }
+      .founder-content h2 {
+        font-size: 20px;
+      }
+      .founder-content p {
+        font-size: 14px;
+      }
+    }
+    .quote-section {
+  background: linear-gradient(135deg, #e5ff93 0%, #d5f86d 100%);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Quote Container */
+.quote-container {
+  background-color: rgba(220, 255, 145, 0.4);
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 10px;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background shape */
+.quote-container::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  bottom: -250px;
+  left: -150px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Content */
+.quote-icon {
+  font-size: 80px;
+  color: #000;
+  margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.quote-text {
+  z-index: 1;
+  position: relative;
+}
+
+.quote-text p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #111;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.quote-author h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.quote-author span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quote-container {
+    padding: 40px 20px;
+  }
+
+  .quote-icon {
+    font-size: 60px;
+  }
+
+  .quote-text p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-icon {
+    font-size: 50px;
+  }
+
+  .quote-text p {
+    font-size: 16px;
+  }
+
+  .quote-author h4 {
+    font-size: 15px;
+  }
+}
+ #about-aretto {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding: 80px 100px;
+      background-color: #000;
+    }
+
+    #about-aretto h2 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    #about-aretto p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #b0b0b0;
+      margin-bottom: 25px;
+    }
+
+    .partner-text {
+      margin-top: 30px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      color: #ddd;
+    }
+
+    .partner-link {
+      display: inline-block;
+      font-size: 18px;
+      margin-top: 10px;
+      color: #4da6ff;
+      text-decoration: none;
+      border-bottom: 1px solid #4da6ff;
+      transition: 0.3s;
+    }
+
+    .partner-link:hover {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    .email {
+      margin-top: 20px;
+      font-size: 15px;
+      color: #bdbdbd;
+    }
+
+    .footer-col h3 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul li a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">aretto</div>
+
+      <ul class="nav-links">
+        <li><a href="#">SHOP ▾</a></li>
+        <li><a href="#">SIZING ▾</a></li>
+
+        <li class="dropdown">
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle">WHY ARETTO ▾</label>
+          <ul class="dropdown-content">
+            <li> <a href="technology.html">Technology</a> </li>
+            <li>Our Story</li>
+            <li>Partner with Us</li>
+            <li>Community</li>
+          </ul>
+        </li>
+
+        <li><a href="#">RETURN & EXCHANGE ▾</a></li>
+        <li><a href="#">FIND A STORE</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+
+      <div class="icons">
+        <span>🔍</span>
+        <span>👤</span>
+        <span>🛒</span>
+      </div>
+    </nav>
+  </header>
+
+  <div class="sub-bar">⚡ Express Delivery ⚡</div>
+
+  <section class="hero">
+    <img
+      src="https://thumbs.dreamstime.com/b/asian-portrait-cute-little-boy-kid-happy-face-laughing-smiles-looking-to-camera-studio-shot-isolated-blue-background-200938823.jpg"
+      alt="Hero Image" />
+    <div class="hero-content">
+      <h1>Discover the Comfort <br />Support Every Step</h1>
+      <p>Step into the world of Aretto – where every step matters. <br>
+    
+So we asked a simple question: why do shoes stay the same when kids don’t?
+That question led to our core innovation - shoes that expand</p>
+      <button> <a href="index.html">Shop Now</a></button>
+    </div>
+  </section>
+  <section class="story">
+  <div class="story-container">
+    <h1>
+      KIDS GROW. SHOES DON’T. THAT NEVER<br />
+      MADE SENSE TO US. SO WE ASKED WHY,<br />
+      AND BUILT A BRAND AROUND THE<br />
+      ANSWER.
+    </h1>
+
+    <p>
+      In 2020, Satyajit Mittal set out to shake things up, not by launching another
+      footwear brand, but by solving a problem no one was questioning. Today,
+      Aretto is the go-to for growing feet, driven by an obsession with innovation
+      and comfort. We’re also the first brand to hold a patent for expandable sole
+      technology. We aim to be the best in the world, designing for feet first and
+      reimagining footwear from first principles. Every pair is made to bring
+      comfort, confidence, and better growth with every step.
+    </p>
+  </div>
+</section>
+<section class="promises">
+    <h2>OUR PROMISES</h2>
+
+    <div class="promise-container">
+      <div class="promise-box">
+        <div class="icon">
+          <img src="https://wearetto.com/cdn/shop/files/blue-foot.png?v=1743404097" alt="Paediatrician Recommended">
+        </div>
+        <p>Paediatrician<br>Recommended</p>
+      </div>
+
+      <div class="promise-box">
+        <div class="icon">
+          <img src="https://wearetto.com/cdn/shop/files/growth.png?v=1743402336" alt="3x Growth">
+        </div>
+        <p>3x Growth</p>
+      </div>
+
+      <div class="promise-box">
+        <div class="icon">
+          <img src="https://wearetto.com/cdn/shop/files/recycled.png?v=1743402390" alt="Recycled Materials">
+        </div>
+        <p>Recycled Materials</p>
+      </div>
+
+      <div class="promise-box">
+        <div class="icon">
+          <img src="https://wearetto.com/cdn/shop/files/made-in-india.png?v=1743402431" alt="Made in India">
+        </div>
+        <p>Made in India</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- What We Stand For Section -->
+  <section class="stand-for">
+    <h2>What We Stand For</h2>
+    <div class="stand-container">
+      <div class="stand-card">
+        <img src="https://wearetto.com/cdn/shop/files/About_Us_-_Web-42_large.png?v=1756143533" alt="Innovation with Purpose">
+        <div class="text">Innovation with Purpose <span>+</span></div>
+      </div>
+      <div class="stand-card">
+        <img src="https://wearetto.com/cdn/shop/files/About_Us_-_Web-40_large.png?v=1756143496" alt="Empathy by Design">
+        <div class="text">Empathy by Design <span>+</span></div>
+      </div>
+      <div class="stand-card">
+        <img src="https://wearetto.com/cdn/shop/files/About_Us_-_Web-41_large.png?v=1756143496" alt="Challenging Conventions">
+        <div class="text">Challenging Conventions <span>+</span></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="founder-section">
+    <div class="founder-img">
+      <img src="https://wearetto.com/cdn/shop/files/Founders_image.jpg?v=1761749579&width=500" alt="Founder Image">
+    </div>
+    <div class="founder-content">
+      <h2>Satyajit Mittal, Founder</h2>
+      <p>
+        With 8+ years of experience as a product designer and problem-solver, Satyajit brings vision and innovation to Aretto.
+        His expertise in production, design, and supply chain building has been instrumental in creating a brand that challenges
+        industry standards and redefines children's footwear.
+      </p>
+    </div>
+  </section>
+  <section class="quote-section">
+    <div class="quote-container">
+      <div class="quote-icon">❝</div>
+      <div class="quote-text">
+        <p>
+          "Real progress starts with a question. At Aretto, we ask why - not to disrupt for the sake of it, but to challenge assumptions that no longer serve people. Growth is natural. Innovation should be too. We didn’t see the value in doing things the way they’ve always been done. We designed a better way forward. One that grows, evolves, and adapts. Raise a leg. Ask why. Never stop growing."
+        </p>
+        <div class="quote-author">
+          <h4>Satyajit Mittal</h4>
+          <span>Founder & CEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+   <section id="about-aretto">
+    <div class="footer-col">
+      <h2>About Aretto</h2>
+      <p>With imagination, skill, and science we are crafting naturally caring shoes for your kid, that grow as your kids' feet grow.</p>
+      
+      <p class="partner-text">PARTNER WITH US</p>
+      <a href="#" class="partner-link">Link to fill the form - Click Here</a>
+
+      <p class="email">Official Email – partner@wearetto.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quicklinks</h3>
+      <ul>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Submit a Return / Exchange Request</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Offline Store - Terms & Conditions</a></li>
+        <li><a href="#">Shipping, Exchange & Refund Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Collaborate with Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <ul>
+        <li>Email – support@wearetto.com</li>
+        <li>Contact – +91-9309192340</li>
+        <li>CIN Number – U19119PN2020PTC190137</li>
+        <li>Upper Ground Floor, Clover Hill Plaza, UG-21, NIBM Rd,<br>Kondhwa, Pune, Maharashtra 411048</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Community</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">WhatsApp</a></li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>

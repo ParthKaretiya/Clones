@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz | Brand World</title>
+    <style>
+        /* === 1. GLOBAL & BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #040404;
+            color: #ffffff; /* Darker text for readability on white BG */
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+        
+        /* Reusable accent button/link */
+        .accent-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background: #007aff; 
+            color: #ffffff;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* === 2. HEADER (Simplified) === */
+        header {
+            width: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-left a,
+        .nav-right a {
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Highlight the active 'Brand' link */
+        .nav-left a:nth-child(4) { 
+            color: #007aff;
+            font-weight: 600;
+        }
+
+        .logo img {
+            height: 38px;
+        }
+
+        /* === 3. HERO SECTION (Brand Philosophy) === */
+        .hero {
+            height: 80vh; /* Shorter for content page */
+            background: url('https://www.mercedes-benz.co.in/content/dam/hq/passengercars/brand/about-us/mercedes-benz-history-brand-star.jpeg/1740017443534.jpg?im=Crop,rect=(281,0,3038,1350);Resize=(2730,1213)') center/cover no-repeat; /* Placeholder Image */
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 80px;
+            color: #ffffff;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        /* === 4. CORE PHILOSOPHY/HISTORY (Two-Column Layout) === */
+        .philosophy-section {
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+        }
+        
+        .philosophy-text, .philosophy-image {
+            flex: 1;
+        }
+        
+        .philosophy-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .philosophy-text p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .philosophy-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* === 5. BRAND MILESTONES (Simple Grid/Timeline style) === */
+        .milestones-section {
+            background-color: #f8f8f8;
+            padding: 80px 60px;
+            text-align: center;
+        }
+        
+        .milestones-section h2 {
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .milestone-card {
+            background: #ffffff;
+            padding: 30px;
+            border-top: 5px solid #000000;
+            text-align: left;
+        }
+        
+        .milestone-card h3 {
+            font-size: 1.8rem;
+            color: #007aff;
+            margin-bottom: 10px;
+        }
+        
+        .milestone-card p {
+            color: #555;
+        }
+
+        /* === 6. SUB-BRANDS HIGHLIGHT (Dark Background for Contrast) === */
+        .sub-brands-section {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 80px 60px;
+            text-align: center;
+        }
+        
+        .sub-brands-section h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+        
+        .sub-brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .sub-brand-card {
+            background: #111111;
+            padding: 30px;
+            border-radius: 4px;
+            text-align: left;
+        }
+        
+        .sub-brand-card h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        /* === 7. FOOTER (Dark-on-Dark is standard for utility links) === */
+        .footer-section {
+            background: #000000;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            padding: 80px 80px 50px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-col h3 {
+            font-size: 1rem;
+            margin-bottom: 18px;
+            color: #ff0000; /* Red accent */
+        }
+
+        .footer-col a {
+            display: block;
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background: #000000;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #111;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* === 8. RESPONSIVE DESIGN === */
+        @media(max-width:900px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-left,
+            .nav-right {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .philosophy-section {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+            
+            .philosophy-image {
+                order: -1; /* Move image to the top */
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .footer-section, .milestones-section, .sub-brands-section {
+                padding: 40px 20px;
+            }
+            .sub-brands-section h2, .milestones-section h2 {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="sedan.html">Models</a>
+            <a href="#">Buy</a>
+            <a href="#">Services</a>
+            <a href="brand.html">Brand</a>
+        </div>
+
+        <div class="logo">
+            <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg"
+                alt="Mercedes Logo">
+        </div>
+
+        <div class="nav-right">
+            <a href="#">Provider/...</a>
+            <a href="#">★</a>
+            <a href="#">♡</a>
+            <a href="#">👤 Login</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <p style="text-transform: uppercase; font-size: 1.2rem; font-weight: 300; margin-bottom: 10px;">The Core of Our DNA</p>
+                <h1>The Best or Nothing.</h1>
+                <p>Our commitment to excellence drives every vehicle we engineer and every detail we craft. Welcome to the Mercedes-Benz World.</p>
+                <a href="#philosophy" class="accent-link" style="background:none; border:2px solid #fff; color:#fff;">Explore Our Legacy</a>
+            </div>
+        </section>
+        
+        <!-- Core Philosophy/History -->
+        <section class="philosophy-section" id="philosophy">
+            <div class="philosophy-text">
+                <h2>Defining Luxury, Setting the Standard.</h2>
+                <p>Since 1886, Mercedes-Benz has been synonymous with visionary technology and incomparable comfort. We don't just follow automotive trends; we invent them. The three-pointed star represents not only the conquest of land, sea, and air but our enduring commitment to mobility.</p>
+                <p>Our journey began with Karl Benz's Patent Motorwagen, the world's first automobile. That same pioneering spirit lives on in every car we produce today, from the quiet power of our EQ electric vehicles to the raw, exhilarating performance of AMG.</p>
+                <a href="#" class="accent-link">Discover Our History</a>
+            </div>
+            <div class="philosophy-image">
+                <img src="https://www.mercedes-benz.co.in/content/dam/india/passengercars/new-homepage/7798202_DefiningClass_still_KV2_300SL_Gullwing_high_RGB.jpg/1746543608983.jpg?im=Crop,rect=(0,135,1080,810);Resize=(800,600)" alt="Classic 300SL Gullwing">
+            </div>
+        </section>
+        
+        <!-- Brand Milestones -->
+        <section class="milestones-section">
+            <h2>Pioneering Moments in Mobility</h2>
+            <div class="timeline-grid">
+                <div class="milestone-card">
+                    <h3>1886</h3>
+                    <p>Karl Benz patents the first automobile, laying the foundation for modern transport.</p>
+                </div>
+                <div class="milestone-card">
+                    <h3>1901</h3>
+                    <p>The Mercedes 35 HP is launched, establishing the modern car design concept.</p>
+                </div>
+                <div class="milestone-card">
+                    <h3>1954</h3>
+                    <p>The iconic 300 SL "Gullwing" is introduced, blending performance and art.</p>
+                </div>
+                <div class="milestone-card">
+                    <h3>2020</h3>
+                    <p>Launch of the EQ sub-brand, committing the company to an electric future.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sub-Brands Highlight -->
+        <section class="sub-brands-section">
+            <h2>The Diversity of the Star</h2>
+            <div class="sub-brands-grid">
+                <div class="sub-brand-card">
+                    <h3>Mercedes-AMG</h3>
+                    <p>Performance derived from motorsport. Handcrafted engines and pure adrenaline.</p>
+                    <a href="#" style="color:#007aff;">Explore AMG →</a>
+                </div>
+                <div class="sub-brand-card">
+                    <h3>Mercedes-Maybach</h3>
+                    <p>The ultimate expression of automotive luxury and bespoke craftsmanship.</p>
+                    <a href="#" style="color:#007aff;">Explore Maybach →</a>
+                </div>
+                <div class="sub-brand-card">
+                    <h3>Mercedes-EQ</h3>
+                    <p>Intelligent electric mobility, defining the silent, sustainable future of driving.</p>
+                    <a href="#" style="color:#007aff;">Explore EQ →</a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer Columns -->
+    <div class="footer-section">
+        <div class="footer-col">
+            <h3>Popular Models</h3>
+            <a href="#">Electric Cars</a>
+            <a href="#">SUV</a>
+            <a href="#">Cabriolets & Roadsters</a>
+            <a href="#">Coupé</a>
+        </div>
+        <div class="footer-col">
+            <h3>Buy a Vehicle</h3>
+            <a href="#">Find a new car</a>
+            <a href="#">Configure your car</a>
+            <a href="#">All brochures</a>
+            <a href="#">Model overview</a>
+        </div>
+        <div class="footer-col">
+            <h3>Shopping Guide</h3>
+            <a href="#">Book a test drive</a>
+            <a href="#">Nearest Showroom</a>
+            <a href="#">Finance</a>
+        </div>
+        <div class="footer-col">
+            <h3>Owners</h3>
+            <a href="#">Book a service appointment</a>
+            <a href="#">Owner's Manuals</a>
+            <a href="#">Service warranty</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+            <h3>Technology</h3>
+            <a href="#">Electric mobility</a>
+            <a href="#">About Mercedes me</a>
+            <a href="#">Connect services</a>
+        </div>
+        <div class="footer-col">
+            <h3>Discover Mercedes</h3>
+            <a href="contact.html">Contact</a>
+            <a href="#">Press Release</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <footer>
+        <p>© 2025 Mercedes-Benz India. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Protections | Trade Assurance - Alibaba Clone</title>
+  
+    <style>
+        /* --- GLOBAL STYLES (Same as Home) --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff;
+            color: #111;
+        }
+
+        /* Top orange bar */
+        .top-bar {
+            background-color: #A24A00;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 40px;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo span { margin-left: 5px; }
+
+        nav { display: flex; gap: 20px; align-items: center; }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            padding-bottom: 4px;
+        }
+
+        /* Active State Style */
+        nav a.active {
+            color: #FF6A00;
+            font-weight: bold;
+            border-bottom: 2px solid #FF6A00;
+        }
+
+        .right-actions { display: flex; gap: 20px; align-items: center; }
+
+        .create-btn {
+            background-color: #FF6A00;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* --- PROTECTION PAGE SPECIFIC STYLES --- */
+
+        /* Hero Banner */
+        .protection-hero {
+            background: linear-gradient(135deg, #FFFAE6 0%, #FFF0C2 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #FFE082;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #FF6A00;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .protection-hero h1 {
+            font-size: 36px;
+            color: #333;
+            margin: 0 0 15px 0;
+        }
+
+        .protection-hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Benefits Grid (3 Columns) */
+        .benefits-grid {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .benefit-card {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: #fff;
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #FF6A00;
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: #FFF4E6;
+            color: #FF6A00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px auto;
+        }
+
+        .benefit-card h3 { margin-bottom: 10px; color: #333; }
+        .benefit-card p { color: #666; font-size: 14px; line-height: 1.6; }
+
+        /* How it Works (Steps) */
+        .steps-section {
+            background-color: #FAFAFA;
+            padding: 60px 20px;
+            border-radius: 16px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        /* Connecting Line */
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: #ddd;
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 auto 15px auto;
+            border: 4px solid #fff; /* Border creates gap from line */
+        }
+
+        .step-item h4 { margin: 10px 0; }
+        .step-item p { font-size: 13px; color: #666; padding: 0 20px; }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .big-btn {
+            background-color: #FF6A00;
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .big-btn:hover { background-color: #cc5500; }
+
+        /* Mobile Adjustments */
+        @media(max-width: 768px) {
+            .steps-container { flex-direction: column; gap: 30px; }
+            .steps-container::before { display: none; } /* Hide line on mobile */
+            .header, .top-bar { padding: 10px 15px; }
+            nav { display: none; }
+        }
+
+        /* --- FOOTER (Same as Home) --- */
+        footer {
+            margin-top: 50px;
+            background-color: #fff;
+            color: #333;
+            padding: 60px 8%;
+            border-top: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div><strong>Alibaba Lens</strong> | Instantly find suppliers with image on any website by our AI search extension!</div>
+        <a href="#">Add to Chrome</a>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="https://play-lh.googleusercontent.com/eSZC2nLJakBYTgk02Sh9VBmkn8TRaiGe9ZHnzkct_hFz55ev1aY0PKafk711JtfmCMP6leqx0O-UmyU_DvRuRQ" alt="Alibaba logo" height="30"> 
+            <span>Alibaba.com</span>
+        </div>
+        <nav>
+            <a href="index.html">All categories</a>
+            <a href="featured.html">Featured selections</a>
+            <a href="#" class="active">Order protections</a>
+        </nav>
+        <div class="right-actions">
+            <span>Deliver to: IN</span>
+            <span>English-INR</span>
+            <a href="#">Sign in</a>
+            <button class="create-btn">Create account</button>
+        </div>
+    </header>
+
+    <section class="protection-hero">
+        <span class="hero-badge">FREE SERVICE</span>
+        <h1>Trade Assurance</h1>
+        <p>Enjoy protection from payment to delivery.</p>
+        <p style="font-size: 14px; margin-top: 10px;">Orders are protected when you pay through Alibaba.com</p>
+    </section>
+
+    <div class="container">
+
+        <h2 class="section-title">What is covered?</h2>
+        <div class="benefits-grid">
+            
+            <div class="benefit-card">
+                <div class="icon-circle">💳</div>
+                <h3>Safe & Easy Payments</h3>
+                <p>Your money is held securely until you confirm delivery. We support over 20 payment methods globally.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="icon-circle">🚚</div>
+                <h3>Money-back Policy</h3>
+                <p>If the product quality or shipping date varies from what you agreed to, you can claim your money back.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="icon-circle">🎧</div>
+                <h3>Shipping & Logistics</h3>
+                <p>Get accurate tracking and on-time delivery guarantees with our verified logistics partners.</p>
+            </div>
+
+        </div>
+
+        <div class="steps-section">
+            <h2 class="section-title">How to use Trade Assurance</h2>
+            
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Place an Order</h4>
+                    <p>Find a supplier offering Trade Assurance and place your order online.</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Pay Securely</h4>
+                    <p>Pay through Alibaba.com using Credit Card, PayPal, or Bank Transfer.</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Receive Goods</h4>
+                    <p>Receive your shipment. If there is an issue, we will help resolve it.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to source confidently?</h2>
+            <br>
+            <a href="featured.html" class="big-btn">Find Suppliers Now</a>
+        </div>
+
+    </div>
+
+    <footer style="font-family: Arial, sans-serif; background-color: #fff; color: #333; padding: 60px 8%; border-top: 1px solid #ddd;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <p style="font-size: 15px;">
+                Trade on the go with the <strong><a href="#" style="color: #0071ce; text-decoration: none;">Alibaba.com app</a></strong>
+            </p>
+        </div>
+        <div style="text-align: center; font-size: 14px; color: #666;">
+            <p>© 1999–2025 Alibaba.com. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

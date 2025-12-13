@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rare Planet - Clone</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .Anav {
+    background-color: maroon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    height: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+
+  .Bnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 350px;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .Bicon {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+  }
+
+  .Cnav {
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+    padding: 17px;
+    flex-wrap: wrap;
+  }
+
+  .Cnav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .Cnav a:hover {
+    color: #ff0000;
+    transition: 0.2s;
+  }
+
+  .F-collection {
+    padding: 23px;
+    margin-left: 100px;
+    max-width: 100%;
+  }
+
+  .tag {
+    position: absolute;
+    color: white;
+    background-color: #ff0000;
+    border-radius: 30%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .F-collection h3 {
+    color: rgb(74, 84, 74);
+  }
+
+  .F-collection h3:hover {
+    text-decoration: underline;
+    color: #555252;
+  }
+
+  .F-collection strong {
+    color: #d13e3e;
+  }
+
+  .F-collection p {
+    padding-left: 50px;
+  }
+
+  .product-grid {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .F-collection h1 {
+    padding: 2px;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  .product-card {
+    text-align: center;
+    position: relative;
+  }
+
+  .product-card img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    transition: 0.2s;
+  }
+
+  .v-all {
+    display: flex;
+    justify-content: center;
+  }
+
+  .v-all button {
+    background-color: maroon;
+    color: white;
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    border: none;
+    transition: 0.2s;
+  }
+
+  .v-all button:hover {
+    background-color: #a00000;
+    transform: translateY(-3px);
+  }
+
+  .wallpaper img,
+  .wallpaper2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .collection h1 {
+    text-align: center;
+    margin: 30px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .product-grid2,
+  .product-grid3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .product-card2 img,
+  .product-card3 img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .product-card2 img:hover,
+  .product-card3 img:hover {
+    transform: scale(1.05);
+  }
+
+  .product-card2 h3 {
+    color: grey;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .bestsellers h1 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .footer {
+    background: #dddddd;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 40px 60px;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .info-box {
+    flex: 1 1 200px;
+    padding: 10px;
+  }
+
+  .info-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+  }
+
+  .info-box img:hover {
+    transform: rotateY(180deg);
+  }
+
+  hr {
+    margin: 30px 0;
+    border: 0.5px solid #9a8c8c;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-column {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .footer-column a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+    text-align: center;
+  }
+
+  .footer-column a:hover {
+    color: #000;
+    text-decoration: underline;
+    transform: translateY(-4px);
+    transition: 0.2s;
+  }
+
+  .footer-column p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Tablets (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    .Bnav {
+      gap: 100px;
+    }
+
+    .Cnav {
+      gap: 30px;
+    }
+
+    .product-grid,
+    .product-grid2,
+    .product-grid3 {
+      justify-content: center;
+    }
+  }
+
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    .Anav {
+      font-size: 12px;
+      height: auto;
+      padding: 8px;
+    }
+
+    .Bnav {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .Cnav {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .product-grid,
+    .product-grid2,
+    .product-grid3 {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .v-all button {
+      width: 120px;
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 30px 20px;
+    }
+
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-column {
+      margin: 15px 0;
+    }
+  }
+
+  /* Small phones (max-width: 480px) */
+  @media (max-width: 480px) {
+    .Anav {
+      font-size: 10px;
+    }
+
+    .Bnav {
+      gap: 10px;
+    }
+
+    .Cnav {
+      gap: 8px;
+    }
+
+    .product-grid,
+    .product-grid2,
+    .product-grid3 {
+      gap: 15px;
+    }
+
+    .v-all button {
+      width: 100px;
+      font-size: 12px;
+      padding: 10px;
+    }
+
+    .footer-column h3 {
+      font-size: 14px;
+    }
+
+    .footer-column a {
+      font-size: 13px;
+    }
+
+    .info-box h4 {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="Anav">
+      <span>Enjoy 10% Extra Off On Rare Planat Products | Use Code - RARE10 </span>
+    </div>
+    <div class="Bnav">
+      <div class="AIcon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="icon">
+        <img
+          src="https://rareplanet.com/cdn/shop/files/WhatsApp_Image_2024-04-03_at_15.18.49_1220f01d.jpg?v=1712137773&width=500"
+          width="220px" height="60px" alt="">
+      </div>
+      <div class="Bicon">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+
+    </div>
+    <hr style="margin: 0;">
+    <div class="Cnav">
+      <a href="#">Home</a>
+      <a href="shopeall.html">Shop All</a>
+      <a href="home&kitchen.html">Hoem & Kitchen</a>
+      <a href="Accessories.html">Accessories</a>
+      <a href="#">Stores</a>
+    </div>
+
+    <div class="wallpaper">
+      <img
+        src="https://rareplanet.com/cdn/shop/files/Red_and_Gold_Traditional_Indian_Raksha_Bandhan_Greeting_Banner.png?v=1754561369&width=1500"
+        height="700" width="1425">
+
+
+    </div>
+    <div class="F-collection">
+      <div class="text">
+        <H1>
+          --FEATURED COLLECTION--
+        </H1>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <span class="tag">Sale</span>
+          <img src="https://rareplanet.com/cdn/shop/files/IMG_1781.jpg?v=1737527185&width=360" width="260" alt="">
+          <h3>
+            Handcrafted Pink Heart-Shaped <br>
+            Ceramic Mugs, Set of 1 <br>
+            <p><del>₹2,899</del> <strong>₹2000</strong></p>
+          </h3>
+        </div>
+
+        <div class="product-card">
+          <span class="tag">Sale</span>
+          <a href="home&kitchen.html"> <img src="https://rareplanet.com/cdn/shop/files/IMG_1850_edited.jpg?v=1743572092&width=360"
+              width="260" alt=""></a>
+
+
+          <h3>
+            Cute Dog Ceramic Coffee Mugs <br>
+            Handcrafted Animal Cups Set of 2 <br>
+            <p><del>₹2,099</del> <strong>₹790</strong></p>
+          </h3>
+        </div>
+
+        <div class="product-card">
+          <span class="tag">Sale</span>
+          <img src="https://rareplanet.com/cdn/shop/files/8yBtzKhk_1.jpg?v=1720683914&width=360" width="260" alt="">
+          <h3>
+            Handcrafted Ceramic Mugs with <br>
+            Red Heart Design, Set of 1<br>
+            <p><del>₹1,899</del> <strong>₹460</strong></p>
+          </h3>
+        </div>
+
+        <div class="product-card">
+          <span class="tag">Sale</span>
+          <img src="https://rareplanet.com/cdn/shop/files/6JJV_ghn_1.jpg?v=1720694211&width=360" width="260" alt="">
+          <h3>
+            Handcrafted Pink Heart-Shaped <br>
+            Ceramic Mugs, Set of 1 <br>
+            <p><del>₹899</del> <strong>₹464</strong></p>
+          </h3>
+        </div>
+
+      </div>
+      <div class="v-all">
+        <button id="button" class="button">View All</button>
+      </div>
+
+
+    </div>
+    <div class="wallpaper2">
+      <img src="https://rareplanet.com/cdn/shop/files/WhatsApp_Image_2024-04-30_at_14.53.14.jpg?v=1714469188&width=1500"
+        height="600" width="1325" alt="">
+    </div>
+
+    <div class="collection">
+      <h1>COLLECTIONS</h1>
+      <div class="product-grid2">
+        <div class="product-card2">
+          <img src="https://rareplanet.com/cdn/shop/files/IMG_5363copy.jpg?v=1700902928&width=535" width="350px"
+            height="400px" alt="">
+          <h3>Ceremic Vase</h3>
+        </div>
+        <div class="product-card2">
+          <img src="https://rareplanet.com/cdn/shop/files/SItara00399copy.jpg?v=1700901846&width=535" width="350px"
+            height="400px alt="">
+                    <h3>Ceremic Water Glass</h3>
+                </div>
+                 <div class=" product-card2">
+          <img
+            src="https://rareplanet.com/cdn/shop/files/Artboard_3_copy_2_300x_56eca172-5c32-4aa1-a122-e9d06b36c299.png?v=1754562034&width=535"
+            width="350px" height="400px alt="">
+                    <h3>All Copper Products</h3>
+                </div>
+               </div>
+            <div class=" bestsellers">
+          <h1>
+            -BESTSELLERS-
+          </h1>
+          <div class="product-grid3">
+            <div class="product-card3">
+              <img src="https://rareplanet.com/cdn/shop/files/Artboard_3-80.jpg?v=1701065643&width=550" width="300px"
+                alt="">
+            </div>
+
+            <div class="product-card3">
+              <img src="https://rareplanet.com/cdn/shop/files/Artboard_2-80.jpg?v=1701065531&width=550" width="300px"
+                alt="">
+            </div>
+
+            <div class="product-card3">
+              <img src="https://rareplanet.com/cdn/shop/files/Artboard_4.png?v=1701065753&width=550" width="300px"
+                alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="info-row">
+      <div class="info-box">
+        <img src="https://rareplanet.com/cdn/shop/files/truck.png?v=1622886022" alt="Free Shipping">
+        <h4>FREE SHIPPING</h4>
+        <p>For all orders over Rs. 1000</p>
+      </div>
+      <div class="info-box">
+        <img src="https://rareplanet.com/cdn/shop/files/customer-service.png?v=1622888895" alt="Support">
+        <h4>Support</h4>
+        <p>Contact us 11 AM to 5 PM, Monday to Friday</p>
+      </div>
+      <div class="info-box">
+        <img src="https://rareplanet.com/cdn/shop/files/return-box.png?v=1622888959" alt="7 Days Return">
+        <h4>7 Days Return</h4>
+        <p>Simply return within 7 days for an exchange</p>
+      </div>
+      <div class="info-box">
+        <img src="https://rareplanet.com/cdn/shop/files/credit-card.png?v=1622889070" alt="Payment Secure">
+        <h4>100% Payment Secure</h4>
+        <p>We ensure secure payment with PEV</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- 🔹 Bottom Footer Links -->
+    <div class="footer-links">
+
+      <div class="footer-column">
+        <h3>CATEGORIES</h3>
+        <a href="#">Home</a>
+        <a href="#">Shop All</a>
+        <a href="#">Home & Kitchen</a>
+        <a href="#">Accessories</a>
+        <a href="#">Stores</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>QUICK LINKS</h3>
+        <a href="#">About us</a>
+        <a href="#">Contact us</a>
+        <a href="#">Partner with us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Blog</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>LEGAL</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Return Policy</a>
+        <a href="#">Terms & Condition</a>
+        <a href="#">Media</a>
+        <a href="#">Stores</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>QUICK INFO</h3>
+        <p>AC-126, Vaishno Devi Apart,<br>
+          Fl No-A, Prafulla Kanan,<br>
+          Near Nonapukur, Kolkata-700101</p>
+        <p>11.00 A.M – 05.00 P.M,<br> Monday – Friday</p>
+        <p>📧 info@rareplanet.in</p>
+        <p>📞 1800-309-6346</p>
+      </div>
+
+    </div>
+    </footer>
+
+</body>
+
+</html>
