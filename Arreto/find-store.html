@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aretto - Find A Store</title>
+    <style>
+        /* =========================================
+           SHARED STYLES (Navbar, Footer, Fonts)
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #ff7a00;
+            transition: 0.3s;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .sub-bar {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        /* Dropdown */
+        .dropdown { position: relative; }
+        .dropdown input { display: none; }
+        .dropdown label { cursor: pointer; color: black; font-weight: 500; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 30px; left: 0;
+            background: white;
+            list-style: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 20px;
+            width: 180px;
+            z-index: 1001;
+        }
+        .dropdown-content li { padding: 8px 0; cursor: pointer; }
+        .dropdown-content li a { color: black; }
+        .dropdown input:checked~.dropdown-content { display: block; }
+
+        /* Footer Styles */
+        .footer { background-color: #0a0a0a; padding: 80px 10%; color: #ccc;}
+        .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+        .footer h2, .footer h4 { font-weight: 700; margin-bottom: 20px; color: #fff; }
+        .footer-about { flex: 1 1 300px; max-width: 350px; }
+        .footer-about p, .footer-contact p { line-height: 1.7; margin-bottom: 10px; }
+        .footer-links ul, .footer-community ul { list-style: none; }
+        .footer-links li, .footer-community li { margin-bottom: 10px; }
+        .footer-links a, .footer-community a { text-decoration: none; color: #ccc; transition: 0.3s; }
+        .footer-links a:hover { color: #fff; }
+
+
+        /* =========================================
+           FIND A STORE SPECIFIC STYLES
+           ========================================= */
+
+        .store-header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .store-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .store-header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 15px 25px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .search-container button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: #ff7a00;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            height: 40px; /* Matches input padding calculation */
+            transition: 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #e96d00;
+        }
+
+        /* Main Content Layout */
+        .locator-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin: 50px auto;
+            padding: 0 20px;
+            gap: 30px;
+            height: 700px; /* Fixed height for scrolling list */
+        }
+
+        /* Left Side: List */
+        .store-list {
+            flex: 1 1 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+            height: 100%;
+        }
+
+        /* Custom Scrollbar for list */
+        .store-list::-webkit-scrollbar { width: 6px; }
+        .store-list::-webkit-scrollbar-thumb { background-color: #ddd; border-radius: 10px; }
+
+        .store-card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .store-card:hover {
+            border-color: #ff7a00;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .store-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .store-card .distance {
+            font-size: 0.9rem;
+            color: #ff7a00;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .store-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .store-card .actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-btn {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+        }
+        
+        .action-btn:hover { color: #ff7a00; border-color: #ff7a00; }
+
+        /* Right Side: Map */
+        .map-section {
+            flex: 2 1 500px;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .navbar { flex-direction: column; gap: 15px; padding: 15px 20px; }
+            .locator-container { height: auto; flex-direction: column-reverse; }
+            .map-section { height: 400px; }
+            .store-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">aretto</a>
+
+            <ul class="nav-links">
+                <li><a href="#">SHOP ▾</a></li>
+                <li><a href="#">SIZING ▾</a></li>
+
+                <li class="dropdown">
+                    <input type="checkbox" id="menu-toggle" />
+                    <label for="menu-toggle">WHY ARETTO ▾</label>
+                    <ul class="dropdown-content">
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="ourstory.html">Our Story</a> </li>
+                        <li>Partner with Us</li>
+                    </ul>
+                </li>
+
+                <li><a href="#">RETURN & EXCHANGE ▾</a></li>
+                <li><a href="#" style="color: #ff7a00; font-weight: bold;">FIND A STORE</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+
+            <div class="icons">
+                <span>🔍</span>
+                <span>👤</span>
+                <span>🛒</span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="sub-bar">📍 Visit us to experience the Groove Technology 📍</div>
+
+    <section class="store-header">
+        <h1>FIND A STORE</h1>
+        <p>Experience the technology first hand. Try on a pair at a store near you.</p>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Enter City, Zip or Address">
+            <button>SEARCH</button>
+        </div>
+    </section>
+
+    <div class="locator-container">
+        
+        <div class="store-list">
+            
+            <div class="store-card">
+                <h3>ARETTO HQ & EXPERIENCE CENTER</h3>
+                <span class="distance">0.2 km away</span>
+                <p>Upper Ground Floor, Clover Hill Plaza, UG-21, NIBM Rd, Kondhwa, Pune, Maharashtra 411048</p>
+                <p><strong>Open:</strong> 10:00 AM - 9:00 PM</p>
+                <div class="actions">
+                    <a href="#" class="action-btn">Get Directions</a>
+                    <a href="#" class="action-btn">Call Store</a>
+                </div>
+            </div>
+
+            <div class="store-card">
+                <h3>PHOENIX MALL MUMBAI</h3>
+                <span class="distance">145 km away</span>
+                <p>Unit F-23, First Floor, Phoenix Market City, Kurla West, Mumbai, Maharashtra 400070</p>
+                <p><strong>Open:</strong> 11:00 AM - 10:00 PM</p>
+                <div class="actions">
+                    <a href="#" class="action-btn">Get Directions</a>
+                    <a href="#" class="action-btn">Call Store</a>
+                </div>
+            </div>
+
+            <div class="store-card">
+                <h3>ARETTO INDIRANAGAR</h3>
+                <span class="distance">840 km away</span>
+                <p>12th Main Rd, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008</p>
+                <p><strong>Open:</strong> 10:30 AM - 9:30 PM</p>
+                <div class="actions">
+                    <a href="#" class="action-btn">Get Directions</a>
+                    <a href="#" class="action-btn">Call Store</a>
+                </div>
+            </div>
+
+             <div class="store-card">
+                <h3>SELECT CITYWALK</h3>
+                <span class="distance">1200 km away</span>
+                <p>Saket District Centre, Sector 6, Pushp Vihar, New Delhi, Delhi 110017</p>
+                <p><strong>Open:</strong> 10:00 AM - 11:00 PM</p>
+                <div class="actions">
+                    <a href="#" class="action-btn">Get Directions</a>
+                    <a href="#" class="action-btn">Call Store</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="map-section">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.992850904374!2d73.89664531484196!3d18.48395598743031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ea7d70425d8d%3A0x7d061517787493b8!2sClover%20Hills%20Plaza!5e0!3m2!1sen!2sin!4v1679900000000!5m2!1sen!2sin" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2>ABOUT ARETTO</h2>
+                <p>With imagination, skill, and science we are crafting naturally caring shoes for your kid, that grow as your kids' feet grow.</p>
+                <h4>PARTNER WITH US</h4>
+                <p><a href="#">Click Here</a> to fill the form.</p>
+                <p>Official Email – partner@wearetto.com</p>
+            </div>
+    
+            <div class="footer-links">
+                <h4>QUICKLINKS</h4>
+                <ul>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Submit a Return</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h4>CONTACT US</h4>
+                <p>Email – support@wearetto.com</p>
+                <p>Contact – +91-9309192340</p>
+                <p>Upper Ground Floor, Clover Hill Plaza, Pune, Maharashtra 411048</p>
+            </div>
+    
+            <div class="footer-community">
+                <h4>COMMUNITY</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
