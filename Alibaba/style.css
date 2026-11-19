@@ -1,0 +1,244 @@
+/* Global Styles for Alibaba Clone */
+:root {
+    --primary-orange: #ff6a00;
+    --dark-orange: #e55c00;
+    --header-bg: #fff;
+    --text-main: #222;
+    --text-muted: #767676;
+    --bg-main: #f2f2f2;
+    --border-color: #e2e2e2;
+    --border-radius: 8px;
+    --blue-link: #06f;
+    --shadow-light: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: var(--primary-orange);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Base Top Banner */
+.top-notice-bar {
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+}
+.top-notice-bar a {
+    color: var(--primary-orange);
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* --- Global Header --- */
+.global-header-wrapper {
+    background: var(--header-bg);
+    border-bottom: 2px solid var(--primary-orange);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.global-header-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-orange);
+    letter-spacing: -0.5px;
+}
+
+.logo-section img {
+    height: 40px;
+}
+
+/* Search Bar Area */
+.search-container {
+    flex: 1;
+    display: flex;
+    border: 2px solid var(--primary-orange);
+    border-radius: 40px;
+    overflow: hidden;
+    height: 44px;
+    background: #fff;
+}
+
+.search-dropdown {
+    padding: 0 15px;
+    border: none;
+    border-right: 1px solid var(--border-color);
+    background: #fff;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 0 15px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-btn {
+    background: var(--primary-orange);
+    color: #fff;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.search-btn:hover {
+    background: var(--dark-orange);
+}
+
+/* Header Right Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.action-item span.icon {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.action-item:hover {
+    color: var(--primary-orange);
+}
+
+/* Bottom Nav Menu */
+.header-bottom-nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.header-bottom-nav .category-menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 8px 0;
+}
+.header-bottom-nav .category-menu-btn:hover {
+    color: var(--primary-orange);
+}
+
+.header-bottom-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+/* Footer Global Styles */
+.global-footer {
+    background: #fff;
+    border-top: 1px solid var(--border-color);
+    padding: 50px 20px 20px;
+    color: #333;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col ul li a {
+    color: #666;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-orange);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    color: #666;
+}
+
+.footer-bottom img {
+    height: 30px;
+    margin: 0 10px;
+}

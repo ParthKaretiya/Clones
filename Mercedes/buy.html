@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz - Buy a Vehicle</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    nav.sub-nav, header {
+        background-color: #000000;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 180px 20px 40px;
+      background: #f4f4f4;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .page-header p {
+      color: #555;
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .options-section {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .options-grid {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .option-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        padding: 40px 30px;
+        width: 320px;
+        text-align: center;
+        transition: 0.3s;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .option-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .option-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: #000;
+    }
+
+    .option-card p {
+        color: #555;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #007aff;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #005ecb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="sedan.html">Models</a>
+      <a href="buy.html" style="color: #007aff; font-weight:bold;">Buy</a>
+      <a href="service.html">Services</a>
+      <a href="history.html">Brand</a>
+    </div>
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg" alt="Mercedes-Benz Logo">
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="#">Provider/...</a>
+      <a href="#">★</a>
+      <a href="#">♡</a>
+      <a href="#">👤 Login</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Your Dream Mercedes</h1>
+    <p>Flexible financing, easy configuration, and immediate availability. Start your journey with us today.</p>
+  </section>
+
+  <!-- Buying Options -->
+  <section class="options-section">
+    <div class="options-grid">
+      <div class="option-card">
+        <h3>Configure your car</h3>
+        <p>Design your Mercedes-Benz exactly as you want it. Select models, engines, colors, and interior upgrades.</p>
+        <a href="#" class="btn">Build your own</a>
+      </div>
+
+      <div class="option-card">
+        <h3>Find Available Vehicles</h3>
+        <p>Explore cars currently in stock at your local dealerships and ready for delivery.</p>
+        <a href="#" class="btn">Search Inventory</a>
+      </div>
+
+      <div class="option-card">
+        <h3>Book a Test Drive</h3>
+        <p>Experience the luxury and performance firsthand. Schedule a test drive with your nearest dealer.</p>
+        <a href="contact.html" class="btn">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer-section">
+      <div class="footer-col">
+          <h3>Popular Models</h3>
+          <a href="electric.html">Electric Cars</a>
+          <a href="suv.html">SUV</a>
+          <a href="#">Cabriolets & Roadsters</a>
+          <a href="sedan.html">Sedan</a>
+      </div>
+      <div class="footer-col">
+          <h3>Buy a Vehicle</h3>
+          <a href="buy.html">Find a new car</a>
+          <a href="buy.html">Configure your car</a>
+          <a href="buy.html">All brochures</a>
+          <a href="buy.html">Model overview</a>
+      </div>
+      <div class="footer-col">
+          <h3>Shopping Guide</h3>
+          <a href="buy.html">Book a test drive</a>
+          <a href="contact.html">Nearest Showroom</a>
+          <a href="buy.html">Finance</a>
+      </div>
+      <div class="footer-col">
+          <h3>Owners</h3>
+          <a href="service.html">Book a service appointment</a>
+          <a href="service.html">Owner's Manuals</a>
+          <a href="service.html">Service warranty</a>
+      </div>
+      <div class="footer-col">
+          <h3>Technology</h3>
+          <a href="electric.html">Electric mobility</a>
+          <a href="history.html">About Mercedes me</a>
+          <a href="electric.html">Connect services</a>
+      </div>
+      <div class="footer-col">
+          <h3>Discover Mercedes</h3>
+          <a href="contact.html">Contact</a>
+          <a href="history.html">Press Release</a>
+          <a href="history.html">Careers</a>
+          <a href="history.html">Privacy</a>
+      </div>
+  </div>
+
+  <div class="footer">
+      <p>© 2025 Mercedes-Benz India. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

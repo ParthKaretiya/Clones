@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz AMG</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page Specific Styles */
+    body {
+        background-color: #0b0b0b; 
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 180px 20px 40px;
+      background: linear-gradient(to bottom, #1a0202, #0b0b0b); /* AMG Red hint */
+    }
+
+    .page-header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ff0000; /* AMG Red */
+    }
+
+    .page-header p {
+      color: #a0a0a0;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .models-section {
+      padding: 60px 60px 100px;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 90px;
+    }
+
+    .model-card {
+      background: #151515;
+      border: 1px solid #222;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+      border-color: #ff0000;
+    }
+
+    .model-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .model-card h3 {
+      font-size: 1.2rem;
+      margin: 15px 0 5px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .model-card p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="border-bottom: 1px solid #330000;">
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="sedan.html">Models</a>
+      <a href="buy.html">Buy</a>
+      <a href="service.html">Services</a>
+      <a href="history.html">Brand</a>
+    </div>
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg" alt="Mercedes-Benz Logo">
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="#">Provider/...</a>
+      <a href="#">★</a>
+      <a href="#">♡</a>
+      <a href="#">👤 Login</a>
+    </div>
+  </header>
+
+  <!-- Sub Navigation -->
+  <nav class="sub-nav" style="border-bottom: 1px solid #330000;">
+    <a href="#">All</a>
+    <a href="sedan.html">Sedans</a>
+    <a href="suv.html">SUVs</a>
+    <a href="electric.html">EQ Models</a>
+    <a href="amg.html" class="active" style="color: #ff0000;">AMG</a>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Mercedes-AMG</h1>
+    <p>Driving Performance. From motorsport to the road, experience the sheer power, precision and dynamic focus of AMG.</p>
+  </section>
+
+  <!-- Models -->
+  <section class="models-section">
+    <div class="models-grid">
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/static/v1/9785/9/6a/e6edd5b77fc25b2a65c654ac15c36ebb1adee.png" alt="AMG S 63 E PERFORMANCE">
+        <h3>AMG S 63 E PERFORMANCE</h3>
+        <p>Hybrid performance, pure dominance.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/223182/805/iris.png?q=COSY-EU-100-1713d0VXqrEFqtyO67PobzIr3eWsrrCsdRRzwQZgZGZbMw3SGtlKStsd2HtcUfpOyXGEuTRJ0l36AOB2NbcbApj7bI5uVKDQC31MOkzNwTKm7jZ7fhKVFsM%25vq9JTyLRzc6Yax7X8rH1KHrn8wvzyoiZL7gM4FaKwTg90QO6PDBPlSeWAXutsd5cTcUfCX1XGEvaBJ0lL6tOB2Pr1bApeARI5usf2QC3UX3kzNGJum7j0hohKVB%25t%25vqA8TyLR5iHYaxC4qrH1qM%25n8wPbIoTnylpEjQQC3vT6khQZ27m%25kL6ZhKV00E%25vqGugyLRKG6Yax2virH18HOn8wiA4oiZ47pM4FgTwTg735wrcldu63eIue919Q6DF1s1n2nvligKfLlCVzWcY54I" alt="AMG E 53 4MATIC+">
+        <h3>AMG E 53 4MATIC+</h3>
+        <p>Luxury meets exhilarating AMG power.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/206087/804/iris.png?q=COSY-EU-100-1713d0VXqNEFqtyO67PobzIr3eWsrrCsdRRzwQZ6ZHZbMw3SGtlajtsd2JQcUfpOyXGEuTRJ0l3OZOB2qrubApRARI5ux5IQC31CWkzNwPnm7jZcohKV5Kh%25vqCuqyLRgcDYaxPXSrH1eHDn8wsTfoiZUMEM4FGTjTg95hp6PDCroSeWznUtsd7BVcUfi%25fXGE4GjJ0lgDfOB2PSObApeIyI5usQMQC3UvrkzNGLNm7j0afhKVHSL%25vq8cXyr%25kWfDpJJ0lCrnOIJRdAbQOznRI5uefuQC3PEdkzN5lwm7jCl6hKVzTS%25vqE3JyLRaGmYaxH08rH18C1n8wioxoiZ4epM4FmIuTg735wrcldu63eZTm9P9Q6DF1s1n2nvligKfLlCVzWcY54I" alt="AMG A 35 4MATIC Sedan">
+        <h3>AMG A 35 4MATIC</h3>
+        <p>Everyday performance with AMG precision.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.drive.com.au/obj/tx_q:50,rs:auto:1920:1080:1/driveau/upload/cms/uploads/vyakoxlxh6qiihf8ersb" alt="AMG EQE SUV">
+        <h3>AMG EQE SUV</h3>
+        <p>Dynamic all-electric performance redefining the SUV experience.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer-section">
+      <!-- Reusing same footer from style -->
+      <div class="footer-col">
+          <h3>Popular Models</h3>
+          <a href="electric.html">Electric Cars</a>
+          <a href="suv.html">SUV</a>
+          <a href="#">Cabriolets & Roadsters</a>
+          <a href="sedan.html">Sedan</a>
+      </div>
+      <div class="footer-col">
+          <h3>Buy a Vehicle</h3>
+          <a href="buy.html">Find a new car</a>
+          <a href="buy.html">Configure your car</a>
+          <a href="buy.html">All brochures</a>
+          <a href="buy.html">Model overview</a>
+      </div>
+      <div class="footer-col">
+          <h3>Shopping Guide</h3>
+          <a href="buy.html">Book a test drive</a>
+          <a href="contact.html">Nearest Showroom</a>
+          <a href="buy.html">Finance</a>
+      </div>
+      <div class="footer-col">
+          <h3>Owners</h3>
+          <a href="service.html">Book a service appointment</a>
+          <a href="service.html">Owner's Manuals</a>
+          <a href="service.html">Service warranty</a>
+      </div>
+      <div class="footer-col">
+          <h3>Technology</h3>
+          <a href="electric.html">Electric mobility</a>
+          <a href="history.html">About Mercedes me</a>
+          <a href="electric.html">Connect services</a>
+      </div>
+      <div class="footer-col">
+          <h3>Discover Mercedes</h3>
+          <a href="contact.html">Contact</a>
+          <a href="history.html">Press Release</a>
+          <a href="history.html">Careers</a>
+          <a href="history.html">Privacy</a>
+      </div>
+  </div>
+
+  <div class="footer">
+      <p>© 2025 Mercedes-Benz India. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz SUV Models</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page Specific Styles */
+    .page-header {
+      text-align: center;
+      padding: 180px 20px 40px;
+      background: linear-gradient(to bottom, #050505, #000);
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      color: #868585;
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .models-section {
+      padding: 60px 60px 100px;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 90px;
+    }
+
+    .model-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    }
+
+    .model-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .model-card h3 {
+      font-size: 1.2rem;
+      margin: 15px 0 5px;
+      color: #000000;
+    }
+
+    .model-card p {
+      font-size: 0.9rem;
+      color: #000000;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="sedan.html">Models</a>
+      <a href="buy.html">Buy</a>
+      <a href="service.html">Services</a>
+      <a href="history.html">Brand</a>
+    </div>
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg" alt="Mercedes-Benz Logo">
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="#">Provider/...</a>
+      <a href="#">★</a>
+      <a href="#">♡</a>
+      <a href="#">👤 Login</a>
+    </div>
+  </header>
+
+  <!-- Sub Navigation -->
+  <nav class="sub-nav">
+    <a href="#">All</a>
+    <a href="#">Hatchbacks</a>
+    <a href="sedan.html">Sedans</a>
+    <a href="suv.html" class="active">SUVs</a>
+    <a href="#">Coupes</a>
+    <a href="electric.html">EQ Models</a>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Mercedes-Benz SUV Models</h1>
+    <p>Discover the luxury SUV lineup — space, power, and unmatched comfort on any terrain.</p>
+  </section>
+
+  <!-- Models -->
+  <section class="models-section">
+    <div class="models-grid">
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/247712/805_055/iris.png?q=COSY-EU-100-1713d0VXqaW7qtyO67PobzIr3eWsrrCsdRRzwQZgkfZbMw3SGtGaFtsd2sDcUfp8qXGEubmJ0l3otOB2NMEbApjThI5uVcZQC31SrkzNBTwm7jA7mhKV5XN%25vq4t9yLRgaFYaxPrSrH1yJRn8wYzcoiZB7lM4FAOrTg9LQ36PDarqSeWHthtsd8BxcUfAyYXOc6VRjZrrH1gObnMrEqioTnPbEM4FzKyTg9itk6PD4%25mSeWseMtsdUvTcUfGryXGHRvW6INpqJRHuaB%25DEyJlfDADSjSiNsG8u4NLwa2ITvU%25&imgt=P27&bkgnd=9&pov=BE040&uni=m&width=610&crop=" alt="GLA">
+        <h3>GLA</h3>
+        <p>Dynamic compact SUV with sharp design.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/254605/804/iris.png?q=COSY-EU-100-1713d0VXqaSFqtyO67PobzIr3eWsrrCsdRRzwQZ6ZHZbMw3SGtGyWtsd2HdcUfp8qXGEubmJ0l3ItOB2NQnbApjtwI5uVQDQC3qvTkzNwTVm7jZ7ZhKVFKh%25vq9vlyLRDG6YaxWbSrH1KJtn8wv8noiZLqZM4FGIlTg90QO6PDBcpSeWAtutsd5cxcUfKLjXGEvTSJ0lLCxOB2Pr2bApeARI5usf2QC3UkrkzNGm6m7j0aohKVBHV%25vqA8lyLRiXJYnymdEWuOOB2znobQOxf5Ikb7oxQC3sE3kzNetDm7jCeShKVz0M%25vq7JdyLRlNpYaxH0hrH18Bln8wiA4oiZ45IM4FgKFTg735wrcldu63eZTmWk9Q6DF1s1n2nvligKfLlCVzWcY54I&imgt=P27&bkgnd=9&pov=BE040&uni=m&width=610&crop=" alt="GLC">
+        <h3>GLC</h3>
+        <p>The perfect blend of luxury and versatility.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/167154/804_054/iris.png?q=COSY-EU-100-1713d0VXq0WdqtyO67PobzIr3eWsrrCsdRRzwQZgk4ZbMw3SGtlKStsd2HtcUfp8qXGEuiBJ0l3IrOB2NzObApRnCI5ux5DQC31vTkzNBTnm7jA6IhKV5Kh%25vqCBayLRzA2Yax7oxrH1KMun8wsOcoiZUboM4FGKuTg906O6PDBSqSeWA02tsd5%25QcUfCmfXGEvTVJ0lLCfOB2aycbApenpI5us5xQC3US3kzNGJum7j0hShKVBHM%25vqNuoyLRiXJYnydjHroY4Jdn8wz8yoiZC5lM4F84uTg9izO6PD4%256SeWg%25ptsdUvVcUaqKDTb32VXq0JL0lKf%25XEd9B96N683eUHpi3v1LlbMKsh&imgt=P27&bkgnd=9&pov=BE040&uni=m&width=610&crop=" alt="GLE">
+        <h3>GLE</h3>
+        <p>Uncompromising intelligence and power.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/167959/804/iris.png?q=COSY-EU-100-1713d0VXqahFqtyO67PobzIr3eWsrrCsdRRzwQZUnRZbMw3SGtlehtsd2vtcUfp8fXGEubmJ0l3ItOB2NS1bApj7pI5uVKDQC31CWkzNwP9m7jA7mhKV50L%25vqCuqyLRgc6YaxP5qrH1eMdn8wsocoiZBkIM4FAm2Tg95Yn6PDCruSeWHmjtsd8s3cUfiFNXGE49dJ0lgOhOB2PbnbApe7yI5usK2QC3vT6khQZ27m%25kL6ZhKV0KE%25vqGUDyLRKLRYaxvaErH1p96n8wi8yoiZ45pM4FgKFTg735wrcldu63eoieUl9Q6DF1s1n2nvligKfLlCVzWcY54I&imgt=P27&bkgnd=9&pov=BE040&uni=m&width=610&crop=" alt="GLS">
+        <h3>GLS</h3>
+        <p>The S-Class of SUVs.</p>
+      </div>
+      
+      <div class="model-card">
+        <img src="https://media.drive.com.au/obj/tx_q:50,rs:auto:1920:1080:1/driveau/upload/cms/uploads/vyakoxlxh6qiihf8ersb" alt="AMG EQE SUV">
+        <h3>AMG EQE SUV</h3>
+        <p>Dynamic all-electric performance SUV.</p>
+      </div>
+
+      <div class="model-card">
+        <img src="https://wieck-mbusa-production.s3.amazonaws.com/photos/f547c2fb0d10ccbc4d3c5068b022e6b1b94ae0c9/preview-928x522.jpg" alt="EQS SUV">
+        <h3>EQS SUV</h3>
+        <p>Unmatched electric luxury for every terrain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer-section">
+      <div class="footer-col">
+          <h3>Popular Models</h3>
+          <a href="electric.html">Electric Cars</a>
+          <a href="suv.html">SUV</a>
+          <a href="#">Cabriolets & Roadsters</a>
+          <a href="sedan.html">Sedan</a>
+      </div>
+      <div class="footer-col">
+          <h3>Buy a Vehicle</h3>
+          <a href="buy.html">Find a new car</a>
+          <a href="buy.html">Configure your car</a>
+          <a href="buy.html">All brochures</a>
+          <a href="buy.html">Model overview</a>
+      </div>
+      <div class="footer-col">
+          <h3>Shopping Guide</h3>
+          <a href="buy.html">Book a test drive</a>
+          <a href="contact.html">Nearest Showroom</a>
+          <a href="buy.html">Finance</a>
+      </div>
+      <div class="footer-col">
+          <h3>Owners</h3>
+          <a href="service.html">Book a service appointment</a>
+          <a href="service.html">Owner's Manuals</a>
+          <a href="service.html">Service warranty</a>
+      </div>
+      <div class="footer-col">
+          <h3>Technology</h3>
+          <a href="electric.html">Electric mobility</a>
+          <a href="history.html">About Mercedes me</a>
+          <a href="electric.html">Connect services</a>
+      </div>
+      <div class="footer-col">
+          <h3>Discover Mercedes</h3>
+          <a href="contact.html">Contact</a>
+          <a href="history.html">Press Release</a>
+          <a href="history.html">Careers</a>
+          <a href="history.html">Privacy</a>
+      </div>
+  </div>
+
+  <div class="footer">
+      <p>© 2025 Mercedes-Benz India. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
