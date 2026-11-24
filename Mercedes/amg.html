@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="style.css">
   <title>Mercedes-Benz AMG</title>
   <link rel="stylesheet" href="style.css">
   <style>
@@ -85,28 +87,50 @@
 <body>
 
   <!-- Header -->
-  <header style="border-bottom: 1px solid #330000;">
-    <div class="nav-left">
-      <a href="index.html">Home</a>
-      <a href="sedan.html">Models</a>
-      <a href="buy.html">Buy</a>
-      <a href="service.html">Services</a>
-      <a href="history.html">Brand</a>
+  <header class="mb-header">
+  <div class="mb-nav-left">
+    <div class="mb-nav-item">
+      <a href="sedan.html" class="mb-nav-link active">Models ▾</a>
+      <div class="mb-dropdown">
+        <a href="sedan.html">Sedans</a>
+        <a href="suv.html">SUVs</a>
+        <a href="electric.html">Electric (EQ)</a>
+        <a href="amg.html">Mercedes-AMG</a>
+      </div>
     </div>
+    <div class="mb-nav-item">
+      <a href="buy.html" class="mb-nav-link ">Buy Online</a>
+    </div>
+    <div class="mb-nav-item">
+      <a href="service.html" class="mb-nav-link ">Services</a>
+    </div>
+    <div class="mb-nav-item">
+      <a href="history.html" class="mb-nav-link ">Brand & Heritage</a>
+    </div>
+  </div>
 
-    <div class="logo">
-      <a href="index.html">
-        <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg" alt="Mercedes-Benz Logo">
-      </a>
-    </div>
+  <a href="index.html" class="mb-logo-link" title="Mercedes-Benz">
+    <svg class="mb-star-logo" viewBox="0 0 100 100" fill="currentColor">
+      <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="3" fill="none"/>
+      <polygon points="50,6 61,48 50,43 39,48" fill="currentColor"/>
+      <polygon points="50,43 61,48 88,78 55,62" fill="currentColor"/>
+      <polygon points="50,43 39,48 12,78 45,62" fill="currentColor"/>
+      <circle cx="50" cy="50" r="4.5" fill="currentColor"/>
+    </svg>
+  </a>
 
-    <div class="nav-right">
-      <a href="#">Provider/...</a>
-      <a href="#">★</a>
-      <a href="#">♡</a>
-      <a href="#">👤 Login</a>
-    </div>
-  </header>
+  <div class="mb-nav-right">
+    <a href="contact.html" class="mb-nav-link ">Contact</a>
+    <a href="contact.html" class="mb-btn-testdrive">Book Test Drive</a>
+    <a href="#" class="mb-nav-link" title="Mercedes me">Mercedes me</a>
+  </div>
+</header>
+<nav class="mb-sub-nav">
+  <a href="sedan.html" class="">Limousines & Sedans</a>
+  <a href="suv.html" class="">SUVs & Off-Road</a>
+  <a href="electric.html" class="">Mercedes-EQ Electric</a>
+  <a href="amg.html" class="active">Mercedes-AMG Performance</a>
+</nav>
 
   <!-- Sub Navigation -->
   <nav class="sub-nav" style="border-bottom: 1px solid #330000;">
@@ -201,5 +225,58 @@
       <p>© 2025 Mercedes-Benz India. All rights reserved.</p>
   </div>
 
+<footer class="mb-footer">
+  <div class="mb-footer-grid">
+    <div class="mb-footer-col">
+      <h4>Vehicle Models</h4>
+      <ul>
+        <li><a href="sedan.html">Limousines & Sedans</a></li>
+        <li><a href="suv.html">SUVs & Off-Roaders</a></li>
+        <li><a href="electric.html">Mercedes-EQ (Electric)</a></li>
+        <li><a href="amg.html">Mercedes-AMG Performance</a></li>
+        <li><a href="buy.html">All Available Vehicles</a></li>
+      </ul>
+    </div>
+    <div class="mb-footer-col">
+      <h4>Purchase & Finance</h4>
+      <ul>
+        <li><a href="buy.html">Online Car Configurator</a></li>
+        <li><a href="buy.html">Certified Pre-Owned</a></li>
+        <li><a href="buy.html">Corporate & Fleet Sales</a></li>
+        <li><a href="contact.html">Finance & Leasing Options</a></li>
+        <li><a href="contact.html">Insurance Services</a></li>
+      </ul>
+    </div>
+    <div class="mb-footer-col">
+      <h4>Customer Services</h4>
+      <ul>
+        <li><a href="service.html">Book Service Appointment</a></li>
+        <li><a href="service.html">Genuine Spare Parts</a></li>
+        <li><a href="service.html">Warranty & Roadside Assist</a></li>
+        <li><a href="service.html">Accessories & Lifestyle</a></li>
+        <li><a href="contact.html">Locate Nearest Dealership</a></li>
+      </ul>
+    </div>
+    <div class="mb-footer-col">
+      <h4>The World of Mercedes</h4>
+      <ul>
+        <li><a href="history.html">Brand Heritage Since 1886</a></li>
+        <li><a href="history.html">Formula 1 & Motorsports</a></li>
+        <li><a href="history.html">Sustainability & Ambition 2039</a></li>
+        <li><a href="contact.html">Press & Media Center</a></li>
+        <li><a href="contact.html">Careers & Opportunities</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mb-footer-bottom">
+    <p>© 2026 Mercedes-Benz India Pvt. Ltd. All rights reserved.</p>
+    <div class="mb-footer-links">
+      <a href="#">Privacy Statement</a>
+      <a href="#">Legal Notice</a>
+      <a href="#">Cookies</a>
+      <a href="#">Data Protection</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

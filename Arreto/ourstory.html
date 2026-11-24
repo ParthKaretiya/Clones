@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Our Story</title>
 
   <style>
@@ -803,7 +807,10 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">aretto</div>
+      <a href="index.html" class="logo" style="display:inline-flex;align-items:center;gap:3px;text-decoration:none;color:#000;">
+  <span style="font-size:26px;font-weight:800;letter-spacing:-0.5px;color:#000;">aretto</span>
+  <span style="width:8px;height:8px;background:#ff7a00;border-radius:50%;margin-top:8px;"></span>
+</a>
 
       <ul class="nav-links">
         <li><a href="#">SHOP ▾</a></li>
@@ -821,15 +828,18 @@
         </li>
 
         <li><a href="#">RETURN & EXCHANGE ▾</a></li>
-        <li><a href="#">FIND A STORE</a></li>
+        <li><a href="find-store.html">FIND A STORE</a></li>
         <li><a href="#">CONTACT US</a></li>
       </ul>
 
-      <div class="icons">
-        <span>🔍</span>
-        <span>👤</span>
-        <span>🛒</span>
-      </div>
+      <div class="icons" style="display:flex;align-items:center;gap:18px;">
+    <a href="#" title="Search" style="color:inherit;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></a>
+    <a href="#" title="Account" style="color:inherit;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+    <a href="#" title="Shopping Bag" style="color:inherit;"><div style="position:relative;display:inline-flex;align-items:center;">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+  <span style="position:absolute;top:-6px;right:-8px;background:#ff7a00;color:#fff;font-size:10px;font-weight:700;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;">0</span>
+</div></a>
+  </div>
     </nav>
   </header>
 
@@ -995,5 +1005,55 @@ That question led to our core innovation - shoes that expand</p>
     </div>
   </section>
 
+<footer style="background:#111;color:#fff;padding:60px 50px 30px;margin-top:60px;font-family:'Poppins',sans-serif;">
+  <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px;">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:3px;margin-bottom:16px;">
+        <span style="font-size:24px;font-weight:800;letter-spacing:-0.5px;color:#fff;">aretto</span>
+        <span style="width:7px;height:7px;background:#ff7a00;border-radius:50%;margin-top:6px;"></span>
+      </div>
+      <p style="font-size:13px;color:#aaa;line-height:1.6;margin-bottom:16px;">
+        Shoes that grow with your child's feet — up to 3 sizes. Patented SuperGro™ technology engineered for natural foot development.
+      </p>
+      <div style="font-size:12px;color:#ff7a00;font-weight:600;">Featured on Shark Tank India 🚀</div>
+    </div>
+    <div>
+      <h4 style="font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;color:#fff;">Shop</h4>
+      <ul style="list-style:none;font-size:13px;color:#aaa;line-height:2.2;">
+        <li><a href="index.html" style="color:inherit;text-decoration:none;">All Kids Shoes</a></li>
+        <li><a href="index.html" style="color:inherit;text-decoration:none;">First Steps (0-3 Yrs)</a></li>
+        <li><a href="index.html" style="color:inherit;text-decoration:none;">Pre-School (3-6 Yrs)</a></li>
+        <li><a href="index.html" style="color:inherit;text-decoration:none;">Junior Walkers (6-10 Yrs)</a></li>
+        <li><a href="index.html" style="color:inherit;text-decoration:none;">Best Sellers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;color:#fff;">Innovation & Story</h4>
+      <ul style="list-style:none;font-size:13px;color:#aaa;line-height:2.2;">
+        <li><a href="technology.html" style="color:inherit;text-decoration:none;">SuperGro™ Technology</a></li>
+        <li><a href="ourstory.html" style="color:inherit;text-decoration:none;">Our Founders & Story</a></li>
+        <li><a href="find-store.html" style="color:inherit;text-decoration:none;">Find A Retail Store</a></li>
+        <li><a href="technology.html" style="color:inherit;text-decoration:none;">Podiatric Certification</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;color:#fff;">Customer Care</h4>
+      <ul style="list-style:none;font-size:13px;color:#aaa;line-height:2.2;">
+        <li><a href="#" style="color:inherit;text-decoration:none;">Size Guide & Foot Chart</a></li>
+        <li><a href="#" style="color:inherit;text-decoration:none;">Easy Returns & Exchange</a></li>
+        <li><a href="#" style="color:inherit;text-decoration:none;">Track Your Order</a></li>
+        <li><a href="find-store.html" style="color:inherit;text-decoration:none;">Contact Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1300px;margin:0 auto;border-top:1px solid #222;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;font-size:12px;color:#777;">
+    <p>© 2026 Aretto (Simplicity Footwear Pvt. Ltd.). All rights reserved.</p>
+    <div style="display:flex;gap:20px;">
+      <a href="#" style="color:inherit;text-decoration:none;">Privacy Policy</a>
+      <a href="#" style="color:inherit;text-decoration:none;">Terms of Service</a>
+      <a href="#" style="color:inherit;text-decoration:none;">Shipping Policy</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

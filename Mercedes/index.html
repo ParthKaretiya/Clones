@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="style.css">
     <title>Mercedes-Benz India | Dream Days</title>
     <style>
         * {
@@ -300,28 +302,44 @@
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="nav-left">
-            <a href="sedan.html">Models</a>
-            <a href="buy.html">Buy</a>
-            <a href="service.html">Services</a>
-            <a href="history.html">Brand</a>
-        </div>
+    <header class="mb-header">
+  <div class="mb-nav-left">
+    <div class="mb-nav-item">
+      <a href="sedan.html" class="mb-nav-link ">Models ▾</a>
+      <div class="mb-dropdown">
+        <a href="sedan.html">Sedans</a>
+        <a href="suv.html">SUVs</a>
+        <a href="electric.html">Electric (EQ)</a>
+        <a href="amg.html">Mercedes-AMG</a>
+      </div>
+    </div>
+    <div class="mb-nav-item">
+      <a href="buy.html" class="mb-nav-link ">Buy Online</a>
+    </div>
+    <div class="mb-nav-item">
+      <a href="service.html" class="mb-nav-link ">Services</a>
+    </div>
+    <div class="mb-nav-item">
+      <a href="history.html" class="mb-nav-link ">Brand & Heritage</a>
+    </div>
+  </div>
 
-        <div class="logo">
-            <img src="https://assets.oneweb.mercedes-benz.com/plugin/hp-assets/latest/images/brands/mercedes-benz/logo.svg"
-                alt="Mercedes Logo">
-        </div>
+  <a href="index.html" class="mb-logo-link" title="Mercedes-Benz">
+    <svg class="mb-star-logo" viewBox="0 0 100 100" fill="currentColor">
+      <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="3" fill="none"/>
+      <polygon points="50,6 61,48 50,43 39,48" fill="currentColor"/>
+      <polygon points="50,43 61,48 88,78 55,62" fill="currentColor"/>
+      <polygon points="50,43 39,48 12,78 45,62" fill="currentColor"/>
+      <circle cx="50" cy="50" r="4.5" fill="currentColor"/>
+    </svg>
+  </a>
 
-        <div class="nav-right">
-            <a href="#">Provider/...</a>
-            <a href="#">★</a>
-            <a href="#">♡</a>
-            <a href="#">👤 Login</a>
-        </div>
-        
-        
-    </header>
+  <div class="mb-nav-right">
+    <a href="contact.html" class="mb-nav-link ">Contact</a>
+    <a href="contact.html" class="mb-btn-testdrive">Book Test Drive</a>
+    <a href="#" class="mb-nav-link" title="Mercedes me">Mercedes me</a>
+  </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -342,21 +360,21 @@
 
             <!-- A200 -->
             <div
-                style="background-color:#ffffff; border-radius:20px; width:320px; padding:25px; box-shadow:0 0 15px rgba(255,255,255,0.1);">
+                style="background-color:#ffffff; border-radius:20px; width:320px; padding:25px; box-shadow:0 8px 24px rgba(0,0,0,0.12); border:1px solid #e5e5e5;">
                 <img src="https://assets.oneweb.mercedes-benz.com/iris/iris.png?COSY-EU-100-1713d0VXqaW7qtyO67PobzIr3eWsrrCsdRRzwQZYZ4ZbMw3SGtGaFtsd2sDcUfp8qXGEubmJ0l3otOB2NMEbApjThI5uVcZQC31grkzNwtnm7jA6ZhKV5Kh%25vqCJjyLRgcDYaxPa9rH1entn8wYOxoiZr7XM4FAK2Tg95bn6PDaksSeWHnRtsd8c%25cUfiA1XGE5YrJbXSqxVFnn8w5zhoiZH6IM4F8mQTg9Pgn6PDe7oSeWsyhtsdUZTcUaqKDTb32VXqapL0fGf%25XEd9BBpxb1loE1JnwxV4V%25d%25CWLH59zW0uB1EdxgXeblpsRpv%25Z=&BKGND=9&IMGT=W27&POV=BE040&width=820&uni=c&crop=100,186,1820,942&im=Trim%2Cfuzz%3D0.3%2Cpadding%3D9"
                     alt="A 200" style="width:100%; border-radius:15px;">
                 <h2 style="margin-top:20px;">A 200</h2>
                 <p style="font-size:14px; color:#000000;">120 kW (163 HP) | Petrol | Automatic</p>
                 <div style="margin-top:15px; text-align:left;">
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Active Parking
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Active Parking
                         Assist</p>
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ MBUX Multimedia
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ MBUX Multimedia
                         System</p>
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Handsfree Access
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Handsfree Access
                     </p>
                 </div>
                 <button
-                    style="margin-top:20px; padding:10px 20px; background:#2d2ad7; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.3s;">Explore
+                    style="margin-top:20px; padding:10px 20px; background:#000; border:1px solid #c8c9cb; color:#fff; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.3s;">Explore
                     & Buy</button>
             </div>
 
@@ -368,15 +386,15 @@
                 <h2 style="margin-top:20px;">C 200</h2>
                 <p style="font-size:14px; color:#000000;">150 kW (204 HP) | Petrol | Automatic</p>
                 <div style="margin-top:15px; text-align:left;">
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Climatized Front
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Climatized Front
                         Seats</p>
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Central Display
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Central Display
                         11.9”</p>
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Parking Package
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Parking Package
                         High</p>
                 </div>
                 <button
-                    style="margin-top:20px; padding:10px 20px; background:#2d2ad7; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.3s;">Explore
+                    style="margin-top:20px; padding:10px 20px; background:#000; border:1px solid #c8c9cb; color:#fff; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.3s;">Explore
                     & Buy</button>
             </div>
 
@@ -388,15 +406,15 @@
                 <h2 style="margin-top:20px;">GLE 300d 4MATIC AMG Line</h2>
                 <p style="font-size:14px; color:#000000;">198 kW (269 HP) | Diesel | Automatic</p>
                 <div style="margin-top:15px; text-align:left;">
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Rear Comfort
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Rear Comfort
                         Package</p>
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Electrically
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Electrically
                         Adjustable Seats</p>
-                    <p style="background:#e0dbdb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Interior Chrome
+                    <p style="background:#1e2025; color:#c8c9cb; padding:6px 10px; border-radius:8px; margin:6px 0;">✔ Interior Chrome
                         Package</p>
                 </div>
                 <button
-                    style="margin-top:20px; padding:10px 20px; background:#2d2ad7; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.3s;">Explore
+                    style="margin-top:20px; padding:10px 20px; background:#000; border:1px solid #c8c9cb; color:#fff; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.3s;">Explore
                     & Buy</button>
             </div>
         </div>
@@ -674,9 +692,59 @@
     </div>
 
     <!-- Footer Bottom -->
-    <footer>
-        <p>© 2025 Mercedes-Benz India. All rights reserved.</p>
-    </footer>
+    <footer class="mb-footer">
+  <div class="mb-footer-grid">
+    <div class="mb-footer-col">
+      <h4>Vehicle Models</h4>
+      <ul>
+        <li><a href="sedan.html">Limousines & Sedans</a></li>
+        <li><a href="suv.html">SUVs & Off-Roaders</a></li>
+        <li><a href="electric.html">Mercedes-EQ (Electric)</a></li>
+        <li><a href="amg.html">Mercedes-AMG Performance</a></li>
+        <li><a href="buy.html">All Available Vehicles</a></li>
+      </ul>
+    </div>
+    <div class="mb-footer-col">
+      <h4>Purchase & Finance</h4>
+      <ul>
+        <li><a href="buy.html">Online Car Configurator</a></li>
+        <li><a href="buy.html">Certified Pre-Owned</a></li>
+        <li><a href="buy.html">Corporate & Fleet Sales</a></li>
+        <li><a href="contact.html">Finance & Leasing Options</a></li>
+        <li><a href="contact.html">Insurance Services</a></li>
+      </ul>
+    </div>
+    <div class="mb-footer-col">
+      <h4>Customer Services</h4>
+      <ul>
+        <li><a href="service.html">Book Service Appointment</a></li>
+        <li><a href="service.html">Genuine Spare Parts</a></li>
+        <li><a href="service.html">Warranty & Roadside Assist</a></li>
+        <li><a href="service.html">Accessories & Lifestyle</a></li>
+        <li><a href="contact.html">Locate Nearest Dealership</a></li>
+      </ul>
+    </div>
+    <div class="mb-footer-col">
+      <h4>The World of Mercedes</h4>
+      <ul>
+        <li><a href="history.html">Brand Heritage Since 1886</a></li>
+        <li><a href="history.html">Formula 1 & Motorsports</a></li>
+        <li><a href="history.html">Sustainability & Ambition 2039</a></li>
+        <li><a href="contact.html">Press & Media Center</a></li>
+        <li><a href="contact.html">Careers & Opportunities</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mb-footer-bottom">
+    <p>© 2026 Mercedes-Benz India Pvt. Ltd. All rights reserved.</p>
+    <div class="mb-footer-links">
+      <a href="#">Privacy Statement</a>
+      <a href="#">Legal Notice</a>
+      <a href="#">Cookies</a>
+      <a href="#">Data Protection</a>
+    </div>
+  </div>
+</footer>
 
     <!-- Scroll Animation Script -->
     <script>

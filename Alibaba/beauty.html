@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>Alibaba Clone - Beauty & Personal Care</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -88,18 +89,20 @@
     <!-- Global Header -->
     <header class="global-header-wrapper">
         <div class="global-header-main">
-            <a href="index.html" class="logo-section">
-                <img src="https://play-lh.googleusercontent.com/eSZC2nLJakBYTgk02Sh9VBmkn8TRaiGe9ZHnzkct_hFz55ev1aY0PKafk711JtfmCMP6leqx0O-UmyU_DvRuRQ" alt="Alibaba Logo">
-                <span style="color:#000; margin-left: 10px;">Alibaba.com</span>
-            </a>
+            <a href="index.html" class="logo-section" aria-label="Alibaba.com"><svg class="ali-logo" viewBox="0 0 280 44" width="160" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="22" cy="22" r="20" fill="#FF6A00"/>
+  <path d="M12 25c2 4 6 7 11 7 6 0 10-4 10-10 0-4-3-8-8-8-4 0-7 3-7 7 0 2 1 4 3 5" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="25" cy="18" r="2" fill="#fff"/>
+  <text x="50" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="#FF6A00" letter-spacing="-0.5">Alibaba<tspan fill="#333" font-weight="500">.com</tspan></text>
+</svg></a>
             <div class="search-container">
                 <select class="search-dropdown"><option>Products</option><option>Suppliers</option></select>
                 <input type="text" class="search-input" placeholder="What are you looking for...">
-                <button class="search-btn"><span>🔍</span> Search</button>
+                <button class="search-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Search</button>
             </div>
             <div class="header-actions">
-                <div class="action-item"><span class="icon">💻</span><span>Download App</span></div>
-                <div class="action-item"><span class="icon">🇮🇳</span><span>English - INR</span></div>
+                <div class="action-item"><span class="icon">📱</span><span>Download App</span></div>
+                <div class="action-item"><span class="icon">🌐</span><span>English - INR</span></div>
                 <div class="action-item"><span class="icon">👤</span><span>Sign In</span></div>
                 <div class="action-item"><span class="icon">✉️</span><span>Messages</span></div>
                 <div class="action-item"><span class="icon">🛒</span><span>Orders</span></div>
@@ -118,6 +121,17 @@
             </ul>
         </div>
     </header>
+<div class="sub-header-nav">
+  <div class="sub-header-container">
+    <a href="index.html" style="font-weight:700;">☰ All Categories</a>
+    <a href="featured.html" >Featured Selections</a>
+    <a href="protection.html" >Trade Assurance</a>
+    <a href="beauty.html" class="active">Beauty & Personal Care</a>
+    <a href="#">Buyer Central</a>
+    <a href="#">Help Center</a>
+    <a href="#">Become a Supplier</a>
+  </div>
+</div>
 
     <section class="beauty-hero">
         <p>Your Global Source for Cosmetics, Skincare, and More</p>
@@ -181,24 +195,67 @@
     </div>
 
     <!-- Footer -->
-    <footer class="global-footer">
-        <div class="footer-inner">
-            <div class="footer-col"><h4>Get support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Live chat</a></li><li><a href="#">Check order status</a></li><li><a href="#">Refunds</a></li><li><a href="#">Report abuse</a></li></ul></div>
-            <div class="footer-col"><h4>Payments and protections</h4><ul><li><a href="#">Safe and easy payments</a></li><li><a href="protection.html">Trade Assurance</a></li><li><a href="#">On-time shipping</a></li><li><a href="#">After-sales protections</a></li></ul></div>
-            <div class="footer-col"><h4>Source on Alibaba.com</h4><ul><li><a href="#">Request for Quotation</a></li><li><a href="#">Membership program</a></li><li><a href="#">Alibaba.com Reads</a></li></ul></div>
-            <div class="footer-col"><h4>Sell on Alibaba.com</h4><ul><li><a href="#">Start selling</a></li><li><a href="#">Seller Central</a></li><li><a href="#">Become a Verified Supplier</a></li><li><a href="#">Partnerships</a></li></ul></div>
-            <div class="footer-col"><h4>Get to know us</h4><ul><li><a href="#">About Alibaba.com</a></li><li><a href="#">Corporate responsibility</a></li><li><a href="#">News center</a></li><li><a href="#">Careers</a></li></ul></div>
-        </div>
-        <div class="footer-bottom">
-            <p style="margin-bottom: 15px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Visa_Inc._logo.svg" alt="Visa">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-            </p>
-            <p>AliExpress | 1688.com | Tmall Taobao World | Alipay | Lazada | Taobao Global</p>
-            <p style="margin-top: 10px;">Policies and rules • Legal Notice • Privacy Policy • Terms of Use</p>
-            <p style="margin-top: 10px;">© 1999–2025 Alibaba.com. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer class="ali-footer">
+  <div class="ali-footer-container">
+    <div class="ali-footer-grid">
+      <div class="ali-footer-col">
+        <h4>Customer Services</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Report Abuse</a></li>
+          <li><a href="#">Submit a Dispute</a></li>
+          <li><a href="#">Policies & Rules</a></li>
+          <li><a href="#">Get Paid for Feedback</a></li>
+        </ul>
+      </div>
+      <div class="ali-footer-col">
+        <h4>About Us</h4>
+        <ul>
+          <li><a href="#">About Alibaba.com</a></li>
+          <li><a href="#">About Alibaba Group</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Alibaba.com Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Corporate News</a></li>
+        </ul>
+      </div>
+      <div class="ali-footer-col">
+        <h4>Source on Alibaba.com</h4>
+        <ul>
+          <li><a href="featured.html">Featured Selections</a></li>
+          <li><a href="beauty.html">Beauty & Personal Care</a></li>
+          <li><a href="#">Request for Quotation</a></li>
+          <li><a href="#">Membership Program</a></li>
+          <li><a href="#">Alibaba.com Logistics</a></li>
+          <li><a href="#">Sales Tax and VAT</a></li>
+        </ul>
+      </div>
+      <div class="ali-footer-col">
+        <h4>Trade Services</h4>
+        <ul>
+          <li><a href="protection.html">Trade Assurance Protection</a></li>
+          <li><a href="protection.html">Inspection Service</a></li>
+          <li><a href="protection.html">Production Monitoring</a></li>
+          <li><a href="protection.html">Letter of Credit</a></li>
+          <li><a href="protection.html">Payment Services</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ali-footer-ecosystem">
+      <p>Alibaba Group: 
+        <a href="#">AliExpress</a> | 
+        <a href="#">1688.com</a> | 
+        <a href="#">Tmall</a> | 
+        <a href="#">Taobao Global</a> | 
+        <a href="#">Lazada</a> | 
+        <a href="#">Alipay</a> | 
+        <a href="#">Alibaba Cloud</a>
+      </p>
+      <p class="ali-copyright">© 1999-2026 Alibaba.com. All rights reserved. Intellectual Property Protection - Privacy Policy - Terms of Use - User Information Legal Enquiry Guide</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

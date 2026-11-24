@@ -1,0 +1,209 @@
+/* ========================================================
+   RARE PLANET ARTISAN HERITAGE DESIGN SYSTEM - HTML/CSS ONLY
+   ======================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --rp-terracotta: #9e3b2b;
+  --rp-terracotta-dark: #812f22;
+  --rp-gold: #c9933b;
+  --rp-gold-light: #f5eedf;
+  --rp-cream: #faf8f5;
+  --rp-card-bg: #ffffff;
+  --rp-border: #ebd9cb;
+  --rp-dark: #222222;
+  --rp-muted: #666666;
+  --rp-font-serif: 'Playfair Display', Georgia, serif;
+  --rp-font-sans: 'DM Sans', -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--rp-cream);
+  color: var(--rp-dark);
+  font-family: var(--rp-font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--rp-terracotta);
+}
+
+/* Announcement Top Bar */
+.Anav {
+  background-color: var(--rp-terracotta) !important;
+  color: #fff !important;
+  text-align: center;
+  padding: 8px 15px !important;
+  font-size: 13px !important;
+  font-family: var(--rp-font-sans) !important;
+  letter-spacing: 0.5px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: auto !important;
+  font-weight: 500;
+}
+
+/* Main Navbar */
+.Bnav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 16px 30px !important;
+  gap: 20px !important;
+}
+
+.AIcon, .Bicon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--rp-dark);
+  font-size: 18px;
+}
+
+.AIcon i, .Bicon i {
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.AIcon i:hover, .Bicon i:hover {
+  color: var(--rp-terracotta);
+  transform: scale(1.1);
+}
+
+/* Category Navigation Strip */
+.Cnav {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+  gap: 40px !important;
+  padding: 14px 20px !important;
+  border-top: 1px solid var(--rp-border);
+  border-bottom: 1px solid var(--rp-border);
+  background: #fff;
+  flex-wrap: wrap;
+}
+
+.Cnav a {
+  font-family: var(--rp-font-sans) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--rp-dark) !important;
+  position: relative;
+  padding: 4px 0;
+}
+
+.Cnav a:hover, .Cnav a.active {
+  color: var(--rp-terracotta) !important;
+}
+
+.Cnav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--rp-terracotta);
+}
+
+/* Product Cards */
+.item-card, .card {
+  background: #fff;
+  border: 1px solid var(--rp-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.item-card:hover, .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(158, 59, 43, 0.12);
+  border-color: var(--rp-terracotta);
+}
+
+/* Artisan Footer */
+.rp-footer {
+  background: #201a18;
+  color: #d8cec8;
+  padding: 60px 30px 30px;
+  margin-top: 80px;
+  border-top: 4px solid var(--rp-terracotta);
+}
+
+.rp-footer-grid {
+  max-width: 1300px;
+  margin: 0 auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.rp-footer-col h4 {
+  font-family: var(--rp-font-serif);
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.rp-footer-col ul {
+  list-style: none;
+}
+
+.rp-footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.rp-footer-col ul li a {
+  color: #b5a9a1;
+}
+
+.rp-footer-col ul li a:hover {
+  color: var(--rp-gold);
+  padding-left: 4px;
+}
+
+.rp-footer-bottom {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 12px;
+  color: #8c8077;
+}
+
+@media (max-width: 768px) {
+  .Bnav {
+    flex-direction: column;
+    gap: 15px !important;
+  }
+  .Cnav {
+    gap: 20px !important;
+    font-size: 12px !important;
+  }
+}
